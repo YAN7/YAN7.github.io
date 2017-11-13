@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>遇到的bug | feYAN7</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="遇到的bug都记录下来，避免自己犯相同的错误">
+<meta name="keywords" content="bug">
+<meta property="og:type" content="article">
+<meta property="og:title" content="遇到的bug">
+<meta property="og:url" content="http://yoursite.com/2016/06/20/遇到的bug/index.html">
+<meta property="og:site_name" content="feYAN7">
+<meta property="og:description" content="遇到的bug都记录下来，避免自己犯相同的错误">
+<meta property="og:locale" content="zh_CH">
+<meta property="og:updated_time" content="2017-11-13T15:16:09.825Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="遇到的bug">
+<meta name="twitter:description" content="遇到的bug都记录下来，避免自己犯相同的错误">
+  
+    <link rel="alternative" href="/atom.xml" title="feYAN7" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/yan7-2.ico">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="/img/头像.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">YAN7</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">YES, I Code.</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>Menu</li>
+						<li>Tags</li>
+						
+						<li>Links</li>
+						
+						
+						<li>Über</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/tags">前端</a></li>
+				        
+							<li><a href="/tags/css">生活</a></li>
+				        
+							<li><a href="/tags/html">随笔</a></li>
+				        
+							<li><a href="/categories/Blog">休闲</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/YAN7" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/2326177375/profile?topnav=1&wvr=6" title="weibo">weibo</a>
+					        
+								<a class="zhihu" target="_blank" href="#" title="zhihu">zhihu</a>
+					        
+								<a class="mail" target="_blank" href="mailto:18565012419@163.com" title="mail">mail</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/CSS/" style="font-size: 13.33px;">CSS</a> <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/Javascript/" style="font-size: 15px;">Javascript</a> <a href="/tags/Vue/" style="font-size: 10px;">Vue</a> <a href="/tags/bug/" style="font-size: 10px;">bug</a> <a href="/tags/canvas/" style="font-size: 10px;">canvas</a> <a href="/tags/es6/" style="font-size: 10px;">es6</a> <a href="/tags/flex/" style="font-size: 10px;">flex</a> <a href="/tags/html/" style="font-size: 16.67px;">html</a> <a href="/tags/http/" style="font-size: 10px;">http</a> <a href="/tags/javascript/" style="font-size: 18.33px;">javascript</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/react-native/" style="font-size: 10px;">react native</a> <a href="/tags/react-native/" style="font-size: 10px;">react-native</a> <a href="/tags/rn/" style="font-size: 10px;">rn</a> <a href="/tags/函数式编程/" style="font-size: 10px;">函数式编程</a> <a href="/tags/前端/" style="font-size: 20px;">前端</a> <a href="/tags/读书笔记/" style="font-size: 10px;">读书笔记</a> <a href="/tags/随笔/" style="font-size: 10px;">随笔</a> <a href="/tags/随记/" style="font-size: 10px;">随记</a> <a href="/tags/面向对象/" style="font-size: 11.67px;">面向对象</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="https://github.com/YAN7">qq</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://weibo.com/2326177375/profile?topnav=1&wvr=6">微博</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="https://github.com/YAN7">github</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="https://www.zhihu.com/people/he-yu-hang">知乎</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">YES,I Code.</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">YAN7</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+			
+				<img lazy-src="/img/头像.jpg" class="js-avatar">
+			
+			</div>
+			<hgroup>
+			  <h1 class="header-author">YAN7</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">YES, I Code.</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/tags">前端</a></li>
+		        
+					<li><a href="/tags/css">生活</a></li>
+		        
+					<li><a href="/tags/html">随笔</a></li>
+		        
+					<li><a href="/categories/Blog">休闲</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/YAN7" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/2326177375/profile?topnav=1&wvr=6" title="weibo">weibo</a>
+			        
+						<a class="zhihu" target="_blank" href="#" title="zhihu">zhihu</a>
+			        
+						<a class="mail" target="_blank" href="mailto:18565012419@163.com" title="mail">mail</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap"><article id="post-遇到的bug" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/06/20/遇到的bug/" class="article-date">
+  	<time datetime="2016-06-20T13:26:38.000Z" itemprop="datePublished">2016-06-20</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      遇到的bug
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/bug/">bug</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+
+
+    <div class="article-entry" itemprop="articleBody">
+      
+     
+
+
+        <blockquote>
+<p>遇到的bug都记录下来，避免自己犯相同的错误</p>
+</blockquote>
+<a id="more"></a>
+<ol>
+<li><p>在面向对象的程序中，如果设置了参数，但是调用该函数时，没有传入实参，那么就会报错。</p>
+<blockquote>
+<p>解决办法: 参数一定要传齐，或者书写形参的时候设置默认值.</p>
+</blockquote>
+</li>
+<li><p>要并排的两个div元素设为inline-block后，有一个元素会掉下来，这是因为行内元素会有一些对齐方式的问题</p>
+<blockquote>
+<p>解决方法：给两个div元素设为一个左浮，一个右浮</p>
+</blockquote>
+</li>
+<li><p>使用angular框架时，使用window.onload会导致出错</p>
+<blockquote>
+<p>解决方法：不需要使用window.onload就可以了</p>
+</blockquote>
+</li>
+<li><p>li标签悬停时，会因为边框的原因导致li标签颤抖</p>
+<blockquote>
+<p>解决方法：给li标签加上和背景色一样的边框，这样鼠标悬停时只会改变边框的颜色而不改变边框的大小</p>
+</blockquote>
+</li>
+<li><p>搜索框不能和搜索按钮无缝连接，总是有1px的空隙</p>
+<blockquote>
+<p>解决方法：这是html页面换行导致的空格合并导致的空隙，只要把两个input在写html页面的时候收尾相连就可以了，或者直接左浮也可以。</p>
+</blockquote>
+</li>
+<li><p>oh-my-zsh修改皮肤后，皮肤没效果并且iterm2报错</p>
+<blockquote>
+<p>解决方法：是因为修改皮肤的时候用了中文的引号，所以文件报错，当看起来很正常的文件报错时，就要注意语法、标点符号这些细节了。</p>
+</blockquote>
+</li>
+<li><p>不能直接在for循环中操作数组长度</p>
+<blockquote>
+<p>把要删除的元素放进一个空数组中，遍历完后再操作这个数组，而不是直接在for循环中删除元素</p>
+</blockquote>
+</li>
+<li><p>在sublime中不能直接通过ajax请求文件</p>
+<blockquote>
+<p>解决办法：通过sublime的插件httpserve来启动文件，就可以请求到文件，并且请求的文件一定要在当前目录下</p>
+</blockquote>
+</li>
+<li><p>angular中，有bug一直调试不出来，后来发现是给控制器以数组的形式传入第二个参数的时候，前面的参数和回调函数中的形参个数不一致</p>
+<blockquote>
+<p>解决办法：angular中，控制器等的传的参数个数要和回调函数中的参数个数一样</p>
+</blockquote>
+</li>
+<li><p>sublime的http servers插件启动不了</p>
+<blockquote>
+<p>解决办法：这是因为自己在iterm中启动了另一个servers服务，导致两者冲突启动不了，关掉iterm中的servers服务就好了</p>
+</blockquote>
+</li>
+<li><p>给div设置border，然后用四个绝对定位到可视范围外的div鼠标悬浮触发div覆盖border，结果四个div不能显示在页面.</p>
+<blockquote>
+<p>解决办法：overflow:hidden 的属性只包括盒子的content和padding，不包括border和margin，所以想要覆盖通过overflow:hidden来让覆盖border显示不不可行的，要在该盒子的下一层设置border，然后覆盖这层的border，这样就可以可以了。</p>
+</blockquote>
+</li>
+<li><p>使用c3属性transition做动画时，直接显示出来而不是以动画的形式出来</p>
+<blockquote>
+<p>解决方法：因为我把transition这个属性加在了hover的标签上，而没有加在</p>
+</blockquote>
+</li>
+<li><p>圣杯布局中，右边的div会掉下来</p>
+<blockquote>
+<p>解决方法：给中间的div设定宽度为100%，这个百分百是对于content的区域来说的，和padding物管，所以要先给中间的div设置两边的padding刚好为左右两个div的宽度，这样左右两个div就不占大div的宽度，再给中间的div设置宽度为100%就可以了，还要注意给中间的盒子和大盒子设置最小宽度.</p>
+</blockquote>
+</li>
+<li><p>流式布局中，遇到左右两个div的布局，缩放的时候两者的距离不可控</p>
+<blockquote>
+<p>解决方法：因为设置定位的时候两个div都是根据父盒子来定位的，所以缩放时肯定改变两者的距离，所以要根据他们的相对位置来定位，比如给两个div都绝对定位到同一个位置，然后给其中一个设置margin-left之类的，这样不管怎么缩放他们之间的距离都是不变的.</p>
+</blockquote>
+</li>
+<li><p>使用c3动画@keyframes以及animation属性时，老是写不对，动画出不来,</p>
+<blockquote>
+<p>解决办法：一开始是自己自己写错了@keyframes的名字，动画死活不动，后来动画不能定在最后一帧，百度解决，总结还是自己对c3动画还很不熟悉，要多做demo，读属性。</p>
+</blockquote>
+</li>
+<li><p>cs属性中scale。tranlate等2d转换属性转换的时候很突兀，没有动画效果</p>
+<blockquote>
+<p>解决方法：加个transition: all 0.5s ease-in; get!</p>
+</blockquote>
+</li>
+<li><p>左边固定宽度，右边自适应的布局布置不出来</p>
+<blockquote>
+<p>解决方法：自己给右边的盒子设置了padding-left,这样是不对的.正确方法是左边的盒子要设置margin-left且为负值，右边的盒子设置width为100%，并且父盒子要设置padding-left为左边盒子的margin-left相对应的正的数值.</p>
+</blockquote>
+</li>
+<li><p>尾部的p标签在屏幕宽度不够分两行显示的情况下文字不能居中显示</p>
+<blockquote>
+<p>解决方法：负盒子不设高度，为了保证p标签上下留有空隙，可设margin-top和margin-bottom为相同的数值，同时p标签只设置行高即可</p>
+</blockquote>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"copyright tac mt10 mb10 bgf5"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">"fz14 lh20 c666"</span>&gt;</span>Copyright2012-2016 一起惠返利网 			m178.hui.com 版权所有<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<ol>
+<li><p>css属性要写两个同样的同样的样式才生效</p>
+<blockquote>
+<p>solution：这是因为自己在上一行css代码中最后加了一个分号，导致第一行代码不生效，</p>
+</blockquote>
+</li>
+<li><p>在用swiper类库做轮播图时，小圆点的默认样式是在图片里的，想要把小圆点放在图片外面</p>
+<blockquote>
+<p>sulution:在放小圆点的div下面再放一个div，以撑开整个轮播图盒子，因为小圆点用的是绝对定位，并且加的div盒子是空白的，所以给小圆点div设置bottom属性就可以把div盒子移下来了。</p>
+</blockquote>
+</li>
+<li><p>关于c3选择器nth-child多选的问题</p>
+<blockquote>
+<p>solution：选取前面的几个:<code>nth-child(-n+b)</code> <br><br>选取后面的几个: <code>nth-child(n-b)</code>  b为要选取的个数 </p>
+</blockquote>
+</li>
+<li><p>在字符串拼接中，数据渲染不出来</p>
+<blockquote>
+<p>solution：一开始用的是html，这样是不行的，因为这样只会渲染最后一条数据，前面的数据都给覆盖了，要用append方法才行.</p>
+</blockquote>
+</li>
+<li><p>在做点击小火箭功能时，点击小火箭页面不以动画的形式滚动回顶部</p>
+<ul>
+<li>错误代码</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">toTop</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">	$(<span class="keyword">this</span>).animate(&#123;<span class="string">'scrollTop'</span>:<span class="string">'0'</span>&#125;, <span class="number">600</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<ul>
+<li><p>正确代码</p>
+ <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">toTop</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">	$(<span class="string">'body'</span>).animate(&#123;<span class="string">'scrollTop'</span>:<span class="string">'0'</span>&#125;, <span class="number">600</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ul>
+<li>原因分析：给小火箭绑定滚回页面顶部当然不行了，要给<strong><em>页面</em></strong>绑定滚回页面顶部事件才行</li>
+</ul>
+<ol>
+<li><p>点击按钮显示隐藏密码输入框是否显示字符</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">showPassword</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">	<span class="keyword">var</span> password = $(<span class="string">".input-password"</span>);</span><br><span class="line">	<span class="keyword">if</span> (password.prop(<span class="string">"type"</span>) == <span class="string">'password'</span>) &#123;</span><br><span class="line">		password.prop(<span class="string">'type'</span>,<span class="string">'text'</span>)</span><br><span class="line">	&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">		password.prop(<span class="string">'type'</span>,<span class="string">'password'</span>)</span><br><span class="line">		<span class="built_in">console</span>.log(password.prop(<span class="string">"type"</span>));</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>用jq的方法html不能给input标签设置文本值，</p>
+<blockquote>
+<p>solution:单标签当然不能用html()方法，要用val()方法，</p>
+</blockquote>
+</li>
+<li><p>jq中用html()方法更改标签内的值时，里面的子标签消失不见了.</p>
+<blockquote>
+<p>solution：这是因为html会把标签内所有的内容都当做文件节点来解析，所以里面的标签给设置的html内容替换了,所以当标签内含有其他内容时，不能用html(),应该用prepend()或者append()方法.    </p>
+</blockquote>
+</li>
+<li><p>在ajax请求中无法请求到数据</p>
+<blockquote>
+<p>solution: 在php文件中，从前台发送过来的数据应该用<code>$user = $_POST[&#39;user&#39;];</code>，注意数据格式用对象.<br>还有一个，就是在php文件获取的是前台发送过来的json数据的。</p>
+</blockquote>
+</li>
+<li><p>发送ajax请求时，显示500 服务器内部错误</p>
+<blockquote>
+<p>solution:这一般是php文件出问题了，没写对，仔细检查每一个细节.</p>
+</blockquote>
+</li>
+<li><p>不通过点击a链接，直接用js或者jq控制页面跳转</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--JavaScript--&gt;</span><br><span class="line"><span class="built_in">window</span>.location.href = <span class="string">"http://www.sitefinity.com"</span>;</span><br><span class="line">&lt;!--jQuery--&gt;</span><br><span class="line">$(location).attr(<span class="string">'href'</span>, <span class="string">'http://www.sitefinity.com'</span>);</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<ol>
+<li><p>html页面右边莫名出现空白，出现横向滚动条 。</p>
+<blockquote>
+<p>solution: 加上这条代码即可 </p>
+</blockquote>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">html</span>&#123;     </span><br><span class="line">    <span class="attribute">width</span>:<span class="number">100%</span>;    </span><br><span class="line">    <span class="attribute">overflow-x</span>:hidden;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ol>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/07/05/在github上展示自己的项目/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          在github上展示自己的项目
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/06/11/canvas/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">canvas</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share_jia">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">Share to: &nbsp; </span>
+		<a class="jiathis_button_facebook"></a> 
+    <a class="jiathis_button_twitter"></a>
+    <a class="jiathis_button_plus"></a> 
+    <a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="遇到的bug" data-title="遇到的bug" data-url="http://yoursite.com/2016/06/20/遇到的bug/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2017 YAN7
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+  <a href="https:github.com/YAN7" class="github-corner"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#70B7FD; color:#fff; position: absolute; top: 0; border: 0; right: 0;"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+</body>
+</html>
