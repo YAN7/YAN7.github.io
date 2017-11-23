@@ -97,7 +97,7 @@
     <!-- Import CSS -->
     
         <style id="material_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_css","/css/material.min.css?Z7a72R1E4SxzBKR/WGctOA==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
-        <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","/css/style.min.css?MKetZV3cUTfDxvMffaOezg==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+        <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","/css/style.min.css?hFq70/8jqTnrumLJYV+O9g==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
 
         
 
@@ -586,10 +586,11 @@
 <blockquote>
 <p>解决方法：负盒子不设高度，为了保证p标签上下留有空隙，可设margin-top和margin-bottom为相同的数值，同时p标签只设置行高即可</p>
 </blockquote>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"copyright tac mt10 mb10 bgf5"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">"fz14 lh20 c666"</span>&gt;</span>Copyright2012-2016 一起惠返利网 			m178.hui.com 版权所有<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<pre><code class="html">    &lt;div class=&quot;copyright tac mt10 mb10 bgf5&quot;&gt;
+        &lt;p class=&quot;fz14 lh20 c666&quot;&gt;Copyright2012-2016 一起惠返利网             m178.hui.com 版权所有&lt;/p&gt;
+    &lt;/div&gt;
+</code></pre>
 </li>
-</ol>
-<ol>
 <li><p>css属性要写两个同样的同样的样式才生效</p>
 <blockquote>
 <p>solution：这是因为自己在上一行css代码中最后加了一个分号，导致第一行代码不生效，</p>
@@ -614,20 +615,32 @@
 <ul>
 <li>错误代码</li>
 </ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">toTop</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">	$(<span class="keyword">this</span>).animate(&#123;<span class="string">'scrollTop'</span>:<span class="string">'0'</span>&#125;, <span class="number">600</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
+<pre><code class="javascript">function toTop() {
+    $(this).animate({&#39;scrollTop&#39;:&#39;0&#39;}, 600);
+}
+</code></pre>
 <ul>
-<li><p>正确代码</p>
- <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">toTop</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">	$(<span class="string">'body'</span>).animate(&#123;<span class="string">'scrollTop'</span>:<span class="string">'0'</span>&#125;, <span class="number">600</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
+<li>正确代码</li>
 </ul>
+<pre><code class="javascript">function toTop() {
+    $(&#39;body&#39;).animate({&#39;scrollTop&#39;:&#39;0&#39;}, 600);
+}
+</code></pre>
 <ul>
 <li>原因分析：给小火箭绑定滚回页面顶部当然不行了，要给<strong><em>页面</em></strong>绑定滚回页面顶部事件才行</li>
 </ul>
-<ol>
+</li>
 <li><p>点击按钮显示隐藏密码输入框是否显示字符</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">showPassword</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">	<span class="keyword">var</span> password = $(<span class="string">".input-password"</span>);</span><br><span class="line">	<span class="keyword">if</span> (password.prop(<span class="string">"type"</span>) == <span class="string">'password'</span>) &#123;</span><br><span class="line">		password.prop(<span class="string">'type'</span>,<span class="string">'text'</span>)</span><br><span class="line">	&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">		password.prop(<span class="string">'type'</span>,<span class="string">'password'</span>)</span><br><span class="line">		<span class="built_in">console</span>.log(password.prop(<span class="string">"type"</span>));</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="javascript">function showPassword() {
+    var password = $(&quot;.input-password&quot;);
+    if (password.prop(&quot;type&quot;) == &#39;password&#39;) {
+        password.prop(&#39;type&#39;,&#39;text&#39;)
+    } else {
+        password.prop(&#39;type&#39;,&#39;password&#39;)
+        console.log(password.prop(&quot;type&quot;));
+    }
+}
+</code></pre>
 </li>
 <li><p>用jq的方法html不能给input标签设置文本值，</p>
 <blockquote>
@@ -650,15 +663,22 @@
 </blockquote>
 </li>
 <li><p>不通过点击a链接，直接用js或者jq控制页面跳转</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--JavaScript--&gt;</span><br><span class="line"><span class="built_in">window</span>.location.href = <span class="string">"http://www.sitefinity.com"</span>;</span><br><span class="line">&lt;!--jQuery--&gt;</span><br><span class="line">$(location).attr(<span class="string">'href'</span>, <span class="string">'http://www.sitefinity.com'</span>);</span><br></pre></td></tr></table></figure>
+<pre><code class="javascript">&lt;!--JavaScript--&gt;
+window.location.href = &quot;http://www.sitefinity.com&quot;;
+&lt;!--jQuery--&gt;
+$(location).attr(&#39;href&#39;, &#39;http://www.sitefinity.com&#39;);
+</code></pre>
 </li>
-</ol>
-<ol>
 <li><p>html页面右边莫名出现空白，出现横向滚动条 。</p>
 <blockquote>
 <p>solution: 加上这条代码即可 </p>
 </blockquote>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">html</span>&#123;     </span><br><span class="line">    <span class="attribute">width</span>:<span class="number">100%</span>;    </span><br><span class="line">    <span class="attribute">overflow-x</span>:hidden;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<pre><code class="css">html{     
+    width:100%;    
+    overflow-x:hidden;
+}
+</code></pre>
+</li>
 </ol>
 
         
@@ -786,7 +806,7 @@
             </a>
             <ul class="dropdown-menu">
             <li>
-                <a class="sidebar_archives-link" href="/archives/2021/03/">三月 2021<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/11/">十一月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/08/">八月 2017<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/07/">七月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/06/">六月 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/04/">四月 2017<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/03/">三月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/01/">一月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/12/">十二月 2016<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/08/">八月 2016<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/07/">七月 2016<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/06/">六月 2016<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/05/">五月 2016<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/04/">四月 2016<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/03/">三月 2016<span class="sidebar_archives-count">5</span></a>
+                <a class="sidebar_archives-link" href="/archives/2021/03/">三月 2021<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/11/">十一月 2017<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/08/">八月 2017<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/07/">七月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/06/">六月 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/04/">四月 2017<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/03/">三月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/01/">一月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/12/">十二月 2016<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/08/">八月 2016<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/07/">七月 2016<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/06/">六月 2016<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/05/">五月 2016<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/04/">四月 2016<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/03/">三月 2016<span class="sidebar_archives-count">5</span></a>
             </ul>
         </li>
         
@@ -1008,6 +1028,10 @@ It will not impact the appearance and can give developers a lot of support :)
 <!-- Import prettify js  -->
 
 
+    
+        <script>lsloader.load("hanabi","/js/hanabi-browser-bundle.js?Pki5+pzkluqu53g+ouMWpA==", true)</script>
+    
+
 
 <!-- Window Load -->
 <!-- add class for prettify -->
@@ -1018,6 +1042,22 @@ It will not impact the appearance and can give developers a lot of support :)
     });
 
     
+    
+        
+            HanabiBrowser.clearColors();
+        
+        
+            
+                
+                    HanabiBrowser.putColor('#006bc4');
+                
+                    HanabiBrowser.putColor('#1687e5');
+                
+                    HanabiBrowser.putColor('#57a9f2');
+                
+            
+        
+        HanabiBrowser.start('pre code',false);
     
 </script>
 

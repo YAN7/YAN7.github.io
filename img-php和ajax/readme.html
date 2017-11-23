@@ -93,7 +93,7 @@
     <!-- Import CSS -->
     
         <style id="material_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_css","/css/material.min.css?Z7a72R1E4SxzBKR/WGctOA==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
-        <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","/css/style.min.css?MKetZV3cUTfDxvMffaOezg==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+        <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","/css/style.min.css?hFq70/8jqTnrumLJYV+O9g==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
 
         
 
@@ -490,29 +490,185 @@
 <h2 id="6、PHP基础"><a href="#6、PHP基础" class="headerlink" title="6、PHP基础"></a>6、PHP基础</h2><blockquote>
 <p>文件以.php后缀结尾，所有程序包含在&lt;?php <strong> 这里是代码 </strong> ?&gt;<br>避免使用中文目录和中文文件名<br>php页面无法直接打开需要运行在服务器环境当中</p>
 </blockquote>
-<h4 id="6-1、最简单的php程序"><a href="#6-1、最简单的php程序" class="headerlink" title="6.1、最简单的php程序"></a>6.1、最简单的php程序</h4><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">	<span class="comment">// 用来指定编码集</span></span><br><span class="line">	header(<span class="string">'Content-Type:text/html; charset=utf-8'</span>);</span><br><span class="line">	<span class="comment">/*这是一个最简单的php程序*/</span></span><br><span class="line">	<span class="keyword">echo</span> <span class="string">'hello world!'</span>;</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+<h4 id="6-1、最简单的php程序"><a href="#6-1、最简单的php程序" class="headerlink" title="6.1、最简单的php程序"></a>6.1、最简单的php程序</h4><pre><code class="php">&lt;?php
+    // 用来指定编码集
+    header(&#39;Content-Type:text/html; charset=utf-8&#39;);
+    /*这是一个最简单的php程序*/
+    echo &#39;hello world!&#39;;
+?&gt;
+</code></pre>
 <h4 id="6-3、变量"><a href="#6-3、变量" class="headerlink" title="6.3、变量"></a>6.3、变量</h4><p>1、变量以$开头 字母/数字/下划线 不能以数字开头<br>2、大小写敏感（区分大小写）</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">  <span class="comment">// 声明一个变量$a并赋值为10</span></span><br><span class="line">  $a = <span class="number">10</span>;</span><br><span class="line"><span class="comment">// 输出一个变量$a</span></span><br><span class="line">  <span class="keyword">echo</span> $a;</span><br><span class="line">  <span class="comment">// 声明一个变量$b并赋值为10</span></span><br><span class="line">  $b = <span class="number">10</span>;</span><br><span class="line">  <span class="comment">// 输出一个变量$b</span></span><br><span class="line">  <span class="keyword">echo</span> $b;</span><br><span class="line">  </span><br><span class="line">  <span class="comment">// 输出顺序是自上向下的</span></span><br><span class="line">  <span class="comment">// 相当于 js dcoument.write()</span></span><br></pre></td></tr></table></figure>
-<h4 id="6-3、数据类型"><a href="#6-3、数据类型" class="headerlink" title="6.3、数据类型"></a>6.3、数据类型</h4><p><strong>字符型</strong><br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$str = <span class="string">'hello world!'</span>;</span><br></pre></td></tr></table></figure></p>
-<p><strong>整型</strong><br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$num = <span class="number">10</span>;</span><br></pre></td></tr></table></figure></p>
-<p><strong>浮点型</strong><br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$float = <span class="number">10.5</span>;</span><br></pre></td></tr></table></figure></p>
-<p><strong>布尔型</strong><br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$bool = <span class="keyword">true</span>;</span><br></pre></td></tr></table></figure></p>
-<p><strong>数组</strong><br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Javascript 数组定义方式 var arr = [1, 2, 3]</span></span><br><span class="line"><span class="comment">// arr[0]、arr[1]、arr[1]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// PHP 是这样定义数组的</span></span><br><span class="line"><span class="comment">// 这种方式叫做**索引数组**</span></span><br><span class="line">$arr = <span class="keyword">array</span>(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>);	</span><br><span class="line"></span><br><span class="line"><span class="comment">// echo $arr[0];</span></span><br><span class="line"><span class="comment">// echo $arr[2];</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 定义方式和Javascript有区别，但是访问方式是一样的</span></span><br></pre></td></tr></table></figure></p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// var obj = &#123;name: itcast, age: 10&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// PHP另一种定定数组的方式，所表达的意义和Javascript一样，</span></span><br><span class="line"><span class="comment">// 只是语法格式不一样</span></span><br><span class="line"><span class="comment">// 这种方式叫做**关联数组**</span></span><br><span class="line">$arr1 = <span class="keyword">array</span>(<span class="string">'name'</span>=&gt;<span class="string">'itcast'</span>, <span class="string">'age'</span>=&gt;<span class="number">10</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// echo $arr1['name'];</span></span><br><span class="line"><span class="comment">// echo $arr1['age'];</span></span><br></pre></td></tr></table></figure>
-<p><strong>对象</strong><br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Javascript var obj = &#123;name: itcast, age: 10&#125;</span></span><br><span class="line"><span class="comment">// PHP需要先创建一个类，下面就是创建过程</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> $name = <span class="string">'itcast'</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> $age = <span class="number">10</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">$person = <span class="keyword">new</span> Person;</span><br><span class="line"></span><br><span class="line"><span class="comment">// PHP访问一个对象属性的语法是不一样的</span></span><br><span class="line"><span class="keyword">echo</span> $person-&gt;name;</span><br><span class="line"></span><br><span class="line"><span class="comment">// obj['name']; obj.name 不行</span></span><br></pre></td></tr></table></figure></p>
-<p><strong>NULL</strong><br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//PHP中一种特殊的数据类型，表示空值，即表示没有为该变量设置任何值null(空值)不区分大小写，null和NULL是一样的。</span></span><br></pre></td></tr></table></figure></p>
-<p><strong>单引号&amp;双引号区别： </strong> 单引号内部的变量不会执行双引号会执行<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$name = <span class="string">'小明'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">echo</span> <span class="string">'name is $name'</span>;<span class="comment">//输出 name is $name</span></span><br><span class="line"><span class="keyword">echo</span> <span class="string">'&lt;br&gt;'</span>;</span><br><span class="line"><span class="keyword">echo</span> <span class="string">"name is $name"</span>;<span class="comment">//输出 name is 小明</span></span><br></pre></td></tr></table></figure></p>
+<pre><code class="php">    // 声明一个变量$a并赋值为10
+    $a = 10;
+     // 输出一个变量$a
+    echo $a;
+    // 声明一个变量$b并赋值为10
+    $b = 10;
+    // 输出一个变量$b
+    echo $b;
+
+    // 输出顺序是自上向下的
+    // 相当于 js dcoument.write()
+</code></pre>
+<h4 id="6-3、数据类型"><a href="#6-3、数据类型" class="headerlink" title="6.3、数据类型"></a>6.3、数据类型</h4><p><strong>字符型</strong>  </p>
+<pre><code class="php">    $str = &#39;hello world!&#39;;
+</code></pre>
+<p><strong>整型</strong>  </p>
+<pre><code class="php">    $num = 10;
+</code></pre>
+<p><strong>浮点型</strong>  </p>
+<pre><code class="php">    $float = 10.5;
+</code></pre>
+<p><strong>布尔型</strong>  </p>
+<pre><code class="php">    $bool = true;
+</code></pre>
+<p><strong>数组</strong></p>
+<pre><code class="php">    // Javascript 数组定义方式 var arr = [1, 2, 3]
+    // arr[0]、arr[1]、arr[1]
+
+    // PHP 是这样定义数组的
+    // 这种方式叫做**索引数组**
+    $arr = array(1, 2, 3);    
+
+    // echo $arr[0];
+    // echo $arr[2];
+
+    // 定义方式和Javascript有区别，但是访问方式是一样的
+</code></pre>
+<pre><code class="php">    // var obj = {name: itcast, age: 10}
+
+    // PHP另一种定定数组的方式，所表达的意义和Javascript一样，
+    // 只是语法格式不一样
+    // 这种方式叫做**关联数组**
+    $arr1 = array(&#39;name&#39;=&gt;&#39;itcast&#39;, &#39;age&#39;=&gt;10);
+
+    // echo $arr1[&#39;name&#39;];
+    // echo $arr1[&#39;age&#39;];
+</code></pre>
+<p><strong>对象</strong>  </p>
+<pre><code class="php">    // Javascript var obj = {name: itcast, age: 10}
+    // PHP需要先创建一个类，下面就是创建过程
+    class Person {
+        public $name = &#39;itcast&#39;;
+
+        public $age = 10;
+    }
+
+    $person = new Person;
+
+    // PHP访问一个对象属性的语法是不一样的
+    echo $person-&gt;name;
+
+    // obj[&#39;name&#39;]; obj.name 不行
+</code></pre>
+<p><strong>NULL</strong>  </p>
+<pre><code class="php">    //PHP中一种特殊的数据类型，表示空值，即表示没有为该变量设置任何值null(空值)不区分大小写，null和NULL是一样的。
+</code></pre>
+<p><strong>单引号&amp;双引号区别： </strong> 单引号内部的变量不会执行双引号会执行</p>
+<pre><code class="php">    $name = &#39;小明&#39;;
+
+    echo &#39;name is $name&#39;;//输出 name is $name
+    echo &#39;&lt;br&gt;&#39;;
+    echo &quot;name is $name&quot;;//输出 name is 小明
+</code></pre>
 <p>索引数组、关联数组（了解即可）</p>
 <h4 id="6-4、运算符-amp-内容输出"><a href="#6-4、运算符-amp-内容输出" class="headerlink" title="6.4、运算符&amp;内容输出"></a>6.4、运算符&amp;内容输出</h4><pre><code>基本与Javascript语法一致  
 . 号表示字符串拼接符，Javascript中为+号
-</code></pre><p>echo：输出简单数据类型，如字符串、数值<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* 连接符</span></span><br><span class="line"><span class="comment">* Javascript中用+号表示连接符</span></span><br><span class="line"><span class="comment">* PHP中使用.点号</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line">$hello = <span class="string">'hello'</span>;</span><br><span class="line"></span><br><span class="line">$world = <span class="string">'world!'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// PHP连接符用.号</span></span><br><span class="line"><span class="keyword">echo</span> $hello . <span class="string">' '</span> .$world;</span><br></pre></td></tr></table></figure></p>
-<p>print_r()：输出复杂数据类型，如数组<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$arr = <span class="keyword">array</span>(<span class="string">'itcast'</span>, <span class="string">'今年'</span>, <span class="string">'10岁了'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 只能输出简单类型</span></span><br><span class="line"><span class="keyword">echo</span> $arr;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 可以打印数组，但是输出的是一个数组的结构</span></span><br><span class="line">print_r($arr);</span><br></pre></td></tr></table></figure></p>
-<p>var_dump()：输出详细信息，如对象、数组（了解）<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">$arr = <span class="keyword">array</span>(<span class="string">'itcast'</span>, <span class="string">'今年'</span>, <span class="string">'10岁了'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 只能输出简单类型</span></span><br><span class="line"><span class="keyword">echo</span> $arr;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 输出详细信息</span></span><br><span class="line">var_dump($arr);</span><br><span class="line"></span><br><span class="line">$hello = <span class="string">'hello'</span>;</span><br><span class="line"><span class="comment">// 输出详细信息</span></span><br><span class="line">var_dump($hello);</span><br></pre></td></tr></table></figure></p>
+</code></pre><p>echo：输出简单数据类型，如字符串、数值</p>
+<pre><code class="php">    /**
+    * 连接符
+    * Javascript中用+号表示连接符
+    * PHP中使用.点号
+    */
+
+    $hello = &#39;hello&#39;;
+
+    $world = &#39;world!&#39;;
+
+    // PHP连接符用.号
+    echo $hello . &#39; &#39; .$world;
+</code></pre>
+<p>print_r()：输出复杂数据类型，如数组</p>
+<pre><code class="php">    $arr = array(&#39;itcast&#39;, &#39;今年&#39;, &#39;10岁了&#39;);
+
+    // 只能输出简单类型
+    echo $arr;
+
+    // 可以打印数组，但是输出的是一个数组的结构
+    print_r($arr);
+</code></pre>
+<p>var_dump()：输出详细信息，如对象、数组（了解）</p>
+<pre><code class="php">    $arr = array(&#39;itcast&#39;, &#39;今年&#39;, &#39;10岁了&#39;);
+
+    // 只能输出简单类型
+    echo $arr;
+
+    // 输出详细信息
+    var_dump($arr);
+
+    $hello = &#39;hello&#39;;
+    // 输出详细信息
+    var_dump($hello);
+</code></pre>
 <h4 id="6-5、函数"><a href="#6-5、函数" class="headerlink" title="6.5、函数"></a>6.5、函数</h4><p>基本与Javascript基本一致  </p>
 <p>函数名对大小写不敏感<br>默认参数（了解即可）  </p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">   <span class="comment">// 1、PHP中函数不可以省略参数</span></span><br><span class="line"><span class="comment">// 2、PHP可以设置默认参数</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sayHello</span><span class="params">($name=<span class="string">'web developer'</span>)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">echo</span> $name . <span class="string">'你好!'</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">sayHello();</span><br></pre></td></tr></table></figure>
-<h4 id="6-6、分支，循环语句"><a href="#6-6、分支，循环语句" class="headerlink" title="6.6、分支，循环语句"></a>6.6、分支，循环语句</h4><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 分支控制语句、循环语句</span></span><br><span class="line"><span class="comment"> * 与Javascript一样</span></span><br><span class="line"><span class="comment"> * foreach 数组遍历函数，类似Javascript中的 for in</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"> $name = <span class="string">'itcast1'</span>;</span><br><span class="line"> </span><br><span class="line"> <span class="keyword">if</span>($name == <span class="string">'itcast'</span>) &#123;</span><br><span class="line">    <span class="keyword">echo</span> <span class="string">'我已经在'</span> . $name . <span class="string">'学习'</span>;</span><br><span class="line"> &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="keyword">echo</span> <span class="string">'我还没有学习过编程'</span>;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 分支控制语句、循环语句</span></span><br><span class="line"><span class="comment"> * 与Javascript一样</span></span><br><span class="line"><span class="comment"> * foreach 数组遍历函数，类似Javascript中的 for in</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="comment">// 索引数组</span></span><br><span class="line">$arr = <span class="keyword">array</span>(<span class="string">'itcast'</span>, <span class="string">'今年'</span>, <span class="string">'10岁了'</span>);</span><br><span class="line"> </span><br><span class="line"><span class="comment">// PHP函数，计算数组的长度</span></span><br><span class="line">$length = count($arr);</span><br><span class="line"> </span><br><span class="line"><span class="comment">// echo $length;</span></span><br><span class="line"> </span><br><span class="line"><span class="comment">// 和Javascript是一样的</span></span><br><span class="line"><span class="comment">// for($i=0; $i&lt;$length; $i++) &#123;</span></span><br><span class="line"><span class="comment">// 	echo $arr[$i];</span></span><br><span class="line"><span class="comment">// &#125;</span></span><br><span class="line"> </span><br><span class="line"><span class="keyword">foreach</span>($arr <span class="keyword">as</span> $k=&gt;$v) &#123;</span><br><span class="line">    <span class="keyword">echo</span> $k . <span class="string">'~~~'</span> . $v;</span><br><span class="line">&#125;;</span><br><span class="line"> </span><br><span class="line"><span class="comment">// 关联数组</span></span><br><span class="line">$arr1 = <span class="keyword">array</span>(<span class="string">'name'</span>=&gt;<span class="string">'itcast'</span>, <span class="string">'age'</span>=&gt;<span class="string">'10'</span>);</span><br><span class="line"> </span><br><span class="line"><span class="comment">// 验证关联数组不可以按索引下标来访问</span></span><br><span class="line"><span class="comment">// echo $arr1[0];</span></span><br><span class="line"> </span><br><span class="line"> <span class="comment">//PHP遍历一个关联数组</span></span><br><span class="line"> <span class="keyword">foreach</span>($arr1 <span class="keyword">as</span> $key=&gt;$val) &#123;</span><br><span class="line">    <span class="keyword">echo</span> $key . <span class="string">'~~~'</span> . $val;</span><br><span class="line"> &#125;</span><br><span class="line"> </span><br><span class="line"> <span class="comment">// 实际开发都是用foreach来遍历数组的</span></span><br></pre></td></tr></table></figure>
+<pre><code class="php">    // 1、PHP中函数不可以省略参数
+    // 2、PHP可以设置默认参数
+
+    function sayHello($name=&#39;web developer&#39;) {
+        echo $name . &#39;你好!&#39;;
+    }
+
+    sayHello();
+</code></pre>
+<h4 id="6-6、分支，循环语句"><a href="#6-6、分支，循环语句" class="headerlink" title="6.6、分支，循环语句"></a>6.6、分支，循环语句</h4><pre><code class="php">    /**
+     * 分支控制语句、循环语句
+     * 与Javascript一样
+     * foreach 数组遍历函数，类似Javascript中的 for in
+     */
+     $name = &#39;itcast1&#39;;
+
+     if($name == &#39;itcast&#39;) {
+        echo &#39;我已经在&#39; . $name . &#39;学习&#39;;
+     } else {
+        echo &#39;我还没有学习过编程&#39;;
+     }
+</code></pre>
+<pre><code class="php">    /**
+     * 分支控制语句、循环语句
+     * 与Javascript一样
+     * foreach 数组遍历函数，类似Javascript中的 for in
+     */
+    // 索引数组
+    $arr = array(&#39;itcast&#39;, &#39;今年&#39;, &#39;10岁了&#39;);
+
+    // PHP函数，计算数组的长度
+    $length = count($arr);
+
+    // echo $length;
+
+    // 和Javascript是一样的
+    // for($i=0; $i&lt;$length; $i++) {
+    //     echo $arr[$i];
+    // }
+
+    foreach($arr as $k=&gt;$v) {
+        echo $k . &#39;~~~&#39; . $v;
+    };
+
+    // 关联数组
+    $arr1 = array(&#39;name&#39;=&gt;&#39;itcast&#39;, &#39;age&#39;=&gt;&#39;10&#39;);
+
+    // 验证关联数组不可以按索引下标来访问
+    // echo $arr1[0];
+
+     //PHP遍历一个关联数组
+     foreach($arr1 as $key=&gt;$val) {
+        echo $key . &#39;~~~&#39; . $val;
+     }
+
+     // 实际开发都是用foreach来遍历数组的
+</code></pre>
 <h4 id="6-7、表单处理"><a href="#6-7、表单处理" class="headerlink" title="6.7、表单处理"></a>6.7、表单处理</h4><p>表单name属性的是用来提供给服务端接收所传递数据而设置的 </p>
 <p>表单action属性设置接收数据的处理程序</p>
 <p>表单method属性设置发送数据的方式</p>
@@ -520,19 +676,165 @@
 <p>$_GET接收 get 传值</p>
 <p>$_POST接收 post 传值</p>
 <p>$_FILES接收文件上传  </p>
-<pre><code>move_uploaded_file($_FILES[&apos;image&apos;][&apos;tmp_name&apos;], &apos;test.jpg&apos;);
-</code></pre><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">"login.php"</span> <span class="attr">method</span>=<span class="string">"post"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"row"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">label</span>&gt;</span>用户：<span class="tag">&lt;/<span class="name">label</span>&gt;</span><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"username"</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"row"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">label</span>&gt;</span>密码：<span class="tag">&lt;/<span class="name">label</span>&gt;</span><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"password"</span> <span class="attr">name</span>=<span class="string">"password"</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"row"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"submit"</span> <span class="attr">value</span>=<span class="string">"登录"</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">"login.php"</span> <span class="attr">method</span>=<span class="string">"post"</span> <span class="attr">enctype</span>=<span class="string">"multipart/form-data"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"row"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">label</span>&gt;</span>图片：<span class="tag">&lt;/<span class="name">label</span>&gt;</span><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"file"</span> <span class="attr">name</span>=<span class="string">"image"</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"row"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"submit"</span> <span class="attr">value</span>=<span class="string">"上传"</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h4 id="6-8、文件导入-amp-amp-常用php函数"><a href="#6-8、文件导入-amp-amp-常用php函数" class="headerlink" title="6.8、文件导入&amp;&amp;常用php函数"></a>6.8、文件导入&amp;&amp;常用php函数</h4><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">include</span> <span class="string">'07.form.html'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">require</span> <span class="string">'07.form.php'</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">$array = <span class="keyword">array</span>(</span><br><span class="line">    <span class="string">'username'</span>=&gt;<span class="string">'itcast'</span>,</span><br><span class="line">    <span class="string">'password'</span>=&gt;<span class="string">'123456'</span></span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"><span class="keyword">echo</span> <span class="string">'获取数组的长度：'</span>.count($array);</span><br><span class="line"><span class="keyword">echo</span> <span class="string">'&lt;br&gt;'</span>;</span><br><span class="line"><span class="keyword">echo</span> <span class="string">'判断是否在数组中：'</span>.in_array(<span class="string">'itcast'</span>,$array);</span><br><span class="line"><span class="keyword">echo</span> <span class="string">'&lt;br&gt;'</span>;</span><br><span class="line"><span class="keyword">echo</span> <span class="string">'检测数组中是否存在key：'</span>.array_key_exists(<span class="string">'username'</span>,$array);</span><br><span class="line"><span class="keyword">echo</span> <span class="string">'&lt;br&gt;'</span>;</span><br></pre></td></tr></table></figure>
+<pre><code>move_uploaded_file($_FILES[&#39;image&#39;][&#39;tmp_name&#39;], &#39;test.jpg&#39;);
+</code></pre><pre><code class="html">&lt;form action=&quot;login.php&quot; method=&quot;post&quot;&gt;
+    &lt;div class=&quot;row&quot;&gt;
+        &lt;label&gt;用户：&lt;/label&gt;&lt;input type=&quot;text&quot; name=&quot;username&quot;/&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;row&quot;&gt;
+        &lt;label&gt;密码：&lt;/label&gt;&lt;input type=&quot;password&quot; name=&quot;password&quot;/&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;row&quot;&gt;
+        &lt;input type=&quot;submit&quot; value=&quot;登录&quot;/&gt;
+    &lt;/div&gt;
+&lt;/form&gt;
+&lt;form action=&quot;login.php&quot; method=&quot;post&quot; enctype=&quot;multipart/form-data&quot;&gt;
+    &lt;div class=&quot;row&quot;&gt;
+        &lt;label&gt;图片：&lt;/label&gt;&lt;input type=&quot;file&quot; name=&quot;image&quot;/&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;row&quot;&gt;
+        &lt;input type=&quot;submit&quot; value=&quot;上传&quot;/&gt;
+    &lt;/div&gt;
+&lt;/form&gt;
+</code></pre>
+<h4 id="6-8、文件导入-amp-amp-常用php函数"><a href="#6-8、文件导入-amp-amp-常用php函数" class="headerlink" title="6.8、文件导入&amp;&amp;常用php函数"></a>6.8、文件导入&amp;&amp;常用php函数</h4><pre><code class="PHP">    include &#39;07.form.html&#39;;
+
+    require &#39;07.form.php&#39;
+</code></pre>
+<pre><code class="php">    $array = array(
+        &#39;username&#39;=&gt;&#39;itcast&#39;,
+        &#39;password&#39;=&gt;&#39;123456&#39;
+    );
+
+    echo &#39;获取数组的长度：&#39;.count($array);
+    echo &#39;&lt;br&gt;&#39;;
+    echo &#39;判断是否在数组中：&#39;.in_array(&#39;itcast&#39;,$array);
+    echo &#39;&lt;br&gt;&#39;;
+    echo &#39;检测数组中是否存在key：&#39;.array_key_exists(&#39;username&#39;,$array);
+    echo &#39;&lt;br&gt;&#39;;
+</code></pre>
 <h4 id="6-9、应用实例"><a href="#6-9、应用实例" class="headerlink" title="6.9、应用实例"></a>6.9、应用实例</h4><p>1、用户登录  </p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">"login.php"</span> <span class="attr">method</span>=<span class="string">"post"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"row"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">label</span>&gt;</span>用户：<span class="tag">&lt;/<span class="name">label</span>&gt;</span><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"username"</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"row"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">label</span>&gt;</span>密码：<span class="tag">&lt;/<span class="name">label</span>&gt;</span><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"password"</span> <span class="attr">name</span>=<span class="string">"password"</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"row"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"submit"</span> <span class="attr">value</span>=<span class="string">"登录"</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">    header(<span class="string">'Content-Type:text/html; charset=utf-8'</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">/*数据库当中的数据*/</span></span><br><span class="line">    $userInfo = <span class="keyword">array</span>(</span><br><span class="line">        <span class="string">'username'</span>=&gt;<span class="string">'itcast'</span>,</span><br><span class="line">        <span class="string">'password'</span>=&gt;<span class="string">'123456'</span></span><br><span class="line">    );</span><br><span class="line"></span><br><span class="line">    <span class="comment">/*拿到提交过来的数据*/</span></span><br><span class="line">    $username = $_POST[<span class="string">'username'</span>];</span><br><span class="line">    $password = $_POST[<span class="string">'password'</span>];</span><br><span class="line"></span><br><span class="line">    <span class="comment">/*去匹配数据库当中的数据*/</span></span><br><span class="line">    <span class="keyword">if</span>($userInfo[<span class="string">'username'</span>] == $username &amp;&amp; $userInfo[<span class="string">'password'</span>] == $password)&#123;</span><br><span class="line">        header(<span class="string">'refresh:0;url=jdMsite/'</span>);</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        header(<span class="string">'refresh:0;url=login.html'</span>);</span><br><span class="line">    &#125;</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+<pre><code class="html">    &lt;form action=&quot;login.php&quot; method=&quot;post&quot;&gt;
+        &lt;div class=&quot;row&quot;&gt;
+            &lt;label&gt;用户：&lt;/label&gt;&lt;input type=&quot;text&quot; name=&quot;username&quot;/&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;row&quot;&gt;
+            &lt;label&gt;密码：&lt;/label&gt;&lt;input type=&quot;password&quot; name=&quot;password&quot;/&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;row&quot;&gt;
+            &lt;input type=&quot;submit&quot; value=&quot;登录&quot;/&gt;
+        &lt;/div&gt;
+    &lt;/form&gt;
+</code></pre>
+<pre><code class="php">&lt;?php
+    header(&#39;Content-Type:text/html; charset=utf-8&#39;);
+
+    /*数据库当中的数据*/
+    $userInfo = array(
+        &#39;username&#39;=&gt;&#39;itcast&#39;,
+        &#39;password&#39;=&gt;&#39;123456&#39;
+    );
+
+    /*拿到提交过来的数据*/
+    $username = $_POST[&#39;username&#39;];
+    $password = $_POST[&#39;password&#39;];
+
+    /*去匹配数据库当中的数据*/
+    if($userInfo[&#39;username&#39;] == $username &amp;&amp; $userInfo[&#39;password&#39;] == $password){
+        header(&#39;refresh:0;url=jdMsite/&#39;);
+    }else{
+        header(&#39;refresh:0;url=login.html&#39;);
+    }
+?&gt;
+</code></pre>
 <p>2、动态网站   </p>
-<p><strong>京东首页</strong><br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">    header(<span class="string">'Content-Type:text/html; charset=utf-8'</span>);</span><br><span class="line"></span><br><span class="line">    $product_list = <span class="keyword">array</span>(</span><br><span class="line">        <span class="keyword">array</span>(</span><br><span class="line">        <span class="string">'imgUrl'</span>=&gt;<span class="string">'images/detail01.jpg'</span>,</span><br><span class="line">        <span class="string">'newPrice'</span>=&gt;<span class="string">'15.00'</span>,</span><br><span class="line">        <span class="string">'oldPrice'</span>=&gt;<span class="string">'19.00'</span></span><br><span class="line">        ),</span><br><span class="line">        <span class="keyword">array</span>(</span><br><span class="line">        <span class="string">'imgUrl'</span>=&gt;<span class="string">'images/detail02.jpg'</span>,</span><br><span class="line">        <span class="string">'newPrice'</span>=&gt;<span class="string">'133.00'</span>,</span><br><span class="line">        <span class="string">'oldPrice'</span>=&gt;<span class="string">'234.00'</span></span><br><span class="line">        ),</span><br><span class="line">        <span class="keyword">array</span>(</span><br><span class="line">        <span class="string">'imgUrl'</span>=&gt;<span class="string">'images/detail01.jpg'</span>,</span><br><span class="line">        <span class="string">'newPrice'</span>=&gt;<span class="string">'340.00'</span>,</span><br><span class="line">        <span class="string">'oldPrice'</span>=&gt;<span class="string">'1432.00'</span></span><br><span class="line">        )</span><br><span class="line">    );</span><br><span class="line"></span><br><span class="line">    <span class="keyword">include</span> <span class="string">'index.html'</span>;</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure></p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--掌上秒杀的内容是会更新的而且是后台更新--&gt;</span><br><span class="line">&lt;ul class="sk_product"&gt;</span><br><span class="line">    <span class="meta">&lt;?php</span> <span class="keyword">foreach</span>($product_list <span class="keyword">as</span> $key =&gt; $val)&#123; <span class="meta">?&gt;</span></span><br><span class="line">        &lt;li&gt;</span><br><span class="line">            &lt;a href=<span class="string">"#"</span>&gt;&lt;img src=<span class="string">"&lt;?php echo $val['imgUrl'] ?&gt;"</span> alt=<span class="string">""</span>/&gt;&lt;/a&gt;</span><br><span class="line">            &lt;p class="new_price"&gt;&amp;yen;&lt;?php echo $val['newPrice'] ?&gt;&lt;/p&gt;</span><br><span class="line">            &lt;p class="old_price"&gt;&amp;yen;&lt;?php echo $val['oldPrice'] ?&gt;&lt;/p&gt;</span><br><span class="line">        &lt;/li&gt;</span><br><span class="line">    <span class="meta">&lt;?php</span> &#125; <span class="meta">?&gt;</span></span><br><span class="line">&lt;/ul&gt;</span><br></pre></td></tr></table></figure>
+<p><strong>京东首页</strong></p>
+<pre><code class="php">    &lt;?php
+        header(&#39;Content-Type:text/html; charset=utf-8&#39;);
+
+        $product_list = array(
+            array(
+            &#39;imgUrl&#39;=&gt;&#39;images/detail01.jpg&#39;,
+            &#39;newPrice&#39;=&gt;&#39;15.00&#39;,
+            &#39;oldPrice&#39;=&gt;&#39;19.00&#39;
+            ),
+            array(
+            &#39;imgUrl&#39;=&gt;&#39;images/detail02.jpg&#39;,
+            &#39;newPrice&#39;=&gt;&#39;133.00&#39;,
+            &#39;oldPrice&#39;=&gt;&#39;234.00&#39;
+            ),
+            array(
+            &#39;imgUrl&#39;=&gt;&#39;images/detail01.jpg&#39;,
+            &#39;newPrice&#39;=&gt;&#39;340.00&#39;,
+            &#39;oldPrice&#39;=&gt;&#39;1432.00&#39;
+            )
+        );
+
+        include &#39;index.html&#39;;
+    ?&gt;
+</code></pre>
+<pre><code class="php">    &lt;!--掌上秒杀的内容是会更新的而且是后台更新--&gt;
+    &lt;ul class=&quot;sk_product&quot;&gt;
+        &lt;?php foreach($product_list as $key =&gt; $val){ ?&gt;
+            &lt;li&gt;
+                &lt;a href=&quot;#&quot;&gt;&lt;img src=&quot;&lt;?php echo $val[&#39;imgUrl&#39;] ?&gt;&quot; alt=&quot;&quot;/&gt;&lt;/a&gt;
+                &lt;p class=&quot;new_price&quot;&gt;&amp;yen;&lt;?php echo $val[&#39;newPrice&#39;] ?&gt;&lt;/p&gt;
+                &lt;p class=&quot;old_price&quot;&gt;&amp;yen;&lt;?php echo $val[&#39;oldPrice&#39;] ?&gt;&lt;/p&gt;
+            &lt;/li&gt;
+        &lt;?php } ?&gt;
+    &lt;/ul&gt;
+</code></pre>
 <p><strong>京东分类</strong></p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">    header(<span class="string">'Content-Type:text/html; charset=utf-8'</span>);</span><br><span class="line"></span><br><span class="line">    $category = <span class="keyword">array</span>(</span><br><span class="line">        <span class="string">'热门推荐'</span>,</span><br><span class="line">        <span class="string">'潮流女装'</span>,</span><br><span class="line">        <span class="string">'品牌男装'</span>,</span><br><span class="line">        <span class="string">'内衣配饰'</span>,</span><br><span class="line">        <span class="string">'家用电器'</span>,</span><br><span class="line">        <span class="string">'电脑办公'</span>,</span><br><span class="line">        <span class="string">'手机数码'</span>,</span><br><span class="line">        <span class="string">'母婴频道'</span>,</span><br><span class="line">        <span class="string">'图书'</span>,</span><br><span class="line">        <span class="string">'家居家纺'</span>,</span><br><span class="line">        <span class="string">'居家生活'</span>,</span><br><span class="line">        <span class="string">'家具建材'</span>,</span><br><span class="line">        <span class="string">'热门推荐'</span>,</span><br><span class="line">        <span class="string">'潮流女装'</span>,</span><br><span class="line">        <span class="string">'品牌男装'</span>,</span><br><span class="line">        <span class="string">'内衣配饰'</span>,</span><br><span class="line">        <span class="string">'家用电器'</span>,</span><br><span class="line">        <span class="string">'电脑办公'</span>,</span><br><span class="line">        <span class="string">'手机数码'</span>,</span><br><span class="line">        <span class="string">'母婴频道'</span>,</span><br><span class="line">        <span class="string">'居家生活'</span>,</span><br><span class="line">        <span class="string">'手机数码'</span>,</span><br><span class="line">        <span class="string">'母婴频道'</span>,</span><br><span class="line">        <span class="string">'图书'</span>,</span><br><span class="line">        <span class="string">'家居家纺'</span>,</span><br><span class="line">        <span class="string">'居家生活'</span>,</span><br><span class="line">        <span class="string">'潮流女装'</span>,</span><br><span class="line">        <span class="string">'家具建材'</span>,</span><br><span class="line">        <span class="string">'热门推荐'</span>,</span><br><span class="line">        <span class="string">'潮流女装'</span>,</span><br><span class="line">    );</span><br><span class="line"></span><br><span class="line">    <span class="comment">//echo count($category);</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">include</span> <span class="string">'category.html'</span>;</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--左侧分类--&gt;</span><br><span class="line">&lt;div class="jd_cate_left"&gt;</span><br><span class="line">    &lt;ul&gt;</span><br><span class="line">        <span class="meta">&lt;?php</span> <span class="keyword">foreach</span>($category <span class="keyword">as</span> $key=&gt;$val)&#123; <span class="meta">?&gt;</span></span><br><span class="line">            &lt;li class="&lt;?php echo $key==1?'now':'' ?&gt;"&gt;&lt;a href="javascript:;"&gt;&lt;?php echo $val ?&gt;&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">        <span class="meta">&lt;?php</span> &#125; <span class="meta">?&gt;</span></span><br><span class="line">    &lt;/ul&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<pre><code class="php">&lt;?php
+    header(&#39;Content-Type:text/html; charset=utf-8&#39;);
+
+    $category = array(
+        &#39;热门推荐&#39;,
+        &#39;潮流女装&#39;,
+        &#39;品牌男装&#39;,
+        &#39;内衣配饰&#39;,
+        &#39;家用电器&#39;,
+        &#39;电脑办公&#39;,
+        &#39;手机数码&#39;,
+        &#39;母婴频道&#39;,
+        &#39;图书&#39;,
+        &#39;家居家纺&#39;,
+        &#39;居家生活&#39;,
+        &#39;家具建材&#39;,
+        &#39;热门推荐&#39;,
+        &#39;潮流女装&#39;,
+        &#39;品牌男装&#39;,
+        &#39;内衣配饰&#39;,
+        &#39;家用电器&#39;,
+        &#39;电脑办公&#39;,
+        &#39;手机数码&#39;,
+        &#39;母婴频道&#39;,
+        &#39;居家生活&#39;,
+        &#39;手机数码&#39;,
+        &#39;母婴频道&#39;,
+        &#39;图书&#39;,
+        &#39;家居家纺&#39;,
+        &#39;居家生活&#39;,
+        &#39;潮流女装&#39;,
+        &#39;家具建材&#39;,
+        &#39;热门推荐&#39;,
+        &#39;潮流女装&#39;,
+    );
+
+    //echo count($category);
+
+    include &#39;category.html&#39;;
+?&gt;
+</code></pre>
+<pre><code class="php">    &lt;!--左侧分类--&gt;
+    &lt;div class=&quot;jd_cate_left&quot;&gt;
+        &lt;ul&gt;
+            &lt;?php foreach($category as $key=&gt;$val){ ?&gt;
+                &lt;li class=&quot;&lt;?php echo $key==1?&#39;now&#39;:&#39;&#39; ?&gt;&quot;&gt;&lt;a href=&quot;javascript:;&quot;&gt;&lt;?php echo $val ?&gt;&lt;/a&gt;&lt;/li&gt;
+            &lt;?php } ?&gt;
+        &lt;/ul&gt;
+    &lt;/div&gt;
+</code></pre>
 <h2 id="7、网络传输协议"><a href="#7、网络传输协议" class="headerlink" title="7、网络传输协议"></a>7、网络传输协议</h2><h4 id="7-1、常见协议"><a href="#7-1、常见协议" class="headerlink" title="7.1、常见协议"></a>7.1、常见协议</h4><p>1、HTTP、HTTPS 超文本传输协议 </p>
 <p>2、FTP 文件传输协议</p>
 <p>3、SMTP 简单邮件传输协议</p>
@@ -601,12 +903,29 @@ POST /day01/code/login.php HTTP/1.1
 <p><strong>其优势在于不阻塞程序的执行，从而提升整体执行效率。</strong></p>
 <p>XMLHttpRequest可以以异步方式的处理程序。</p>
 <h4 id="8-2、-XMLHttpRequest"><a href="#8-2、-XMLHttpRequest" class="headerlink" title="8.2、 XMLHttpRequest"></a>8.2、 XMLHttpRequest</h4><p>浏览器内建对象，用于在后台与服务器通信(交换数据) ，<br>由此我们便可实现对网页的部分更新，而不是刷新整个页面。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*js 内置的 http 请求对象  XMLHttpRequest*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/*1.怎么使用 这个内置对象*/</span></span><br><span class="line"><span class="keyword">var</span> xhr = <span class="keyword">new</span> XMLHttpRequest;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*2.怎么样去组请求*/</span></span><br><span class="line"><span class="comment">/*请求的行*/</span></span><br><span class="line">xhr.open(<span class="string">'post'</span>,<span class="string">'01.php'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">/*请求头*/</span></span><br><span class="line"><span class="comment">//get  没有必要设置</span></span><br><span class="line"><span class="comment">//post 必须设置 Content-Type: application/x-www-form-urlencoded</span></span><br><span class="line">xhr.setRequestHeader(<span class="string">'Content-Type'</span>,<span class="string">'application/x-www-form-urlencoded'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">/*请内容*/</span></span><br><span class="line"><span class="comment">/*3.发送请求*/</span></span><br><span class="line">xhr.send(<span class="string">"name=xjj&amp;age=10"</span>);</span><br></pre></td></tr></table></figure>
+<pre><code class="javascript">    /*js 内置的 http 请求对象  XMLHttpRequest*/
+
+    /*1.怎么使用 这个内置对象*/
+    var xhr = new XMLHttpRequest;
+
+    /*2.怎么样去组请求*/
+    /*请求的行*/
+    xhr.open(&#39;post&#39;,&#39;01.php&#39;);
+
+    /*请求头*/
+    //get  没有必要设置
+    //post 必须设置 Content-Type: application/x-www-form-urlencoded
+    xhr.setRequestHeader(&#39;Content-Type&#39;,&#39;application/x-www-form-urlencoded&#39;);
+
+    /*请内容*/
+    /*3.发送请求*/
+    xhr.send(&quot;name=xjj&amp;age=10&quot;);
+</code></pre>
 <h5 id="8-2-1、请求"><a href="#8-2-1、请求" class="headerlink" title="8.2.1、请求"></a>8.2.1、请求</h5><p>HTTP请求3个组成部分与XMLHttpRequest方法的对应关系</p>
 <p>1、请求行</p>
-<pre><code>xhr.open(&apos;post&apos;,&apos;01.php&apos;);
+<pre><code>xhr.open(&#39;post&#39;,&#39;01.php&#39;);
 </code></pre><p>2、请求头</p>
-<pre><code>xhr.setRequestHeader(&apos;Content-Type&apos;,&apos;application/x-www-form-urlencoded&apos;);
+<pre><code>xhr.setRequestHeader(&#39;Content-Type&#39;,&#39;application/x-www-form-urlencoded&#39;);
 get请求可以不设置
 </code></pre><p>3、请求主体</p>
 <pre><code>xhr.send(&quot;name=xjj&amp;age=10&quot;);
@@ -615,7 +934,13 @@ get可以传空
 <h5 id="8-2-2、响应"><a href="#8-2-2、响应" class="headerlink" title="8.2.2、响应"></a>8.2.2、响应</h5><p>HTTP响应是由服务端发出的，作为客户端更应关心的是响应的结果。</p>
 <p>HTTP响应3个组成部分与XMLHttpRequest方法或属性的对应关系。</p>
 <p>由于服务器做出响应需要时间（比如网速慢等原因），所以我们需要监听服务器响应的状态，然后才能进行处理。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(xhr.readyState == <span class="number">4</span> &amp;&amp; xhr.status == <span class="number">200</span>)&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'ok'</span>);</span><br><span class="line">    <span class="built_in">console</span>.log(xhr.responseText);</span><br><span class="line">    <span class="comment">/*把内容渲染在页面当中*/</span></span><br><span class="line">    <span class="built_in">document</span>.querySelector(<span class="string">'#result'</span>).innerHTML = xhr.responseText;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="javascript">    if(xhr.readyState == 4 &amp;&amp; xhr.status == 200){
+        console.log(&#39;ok&#39;);
+        console.log(xhr.responseText);
+        /*把内容渲染在页面当中*/
+        document.querySelector(&#39;#result&#39;).innerHTML = xhr.responseText;
+    }
+</code></pre>
 <pre><code>**readyState**
 0：请求未初始化（还没有调用 open()）。  
 1：请求已经建立，但是还没有发送（还没有调用 send()）。  
@@ -628,7 +953,7 @@ get可以传空
 
 xhr.statusText 状态码信息
 </code></pre><p>2、获取响应头</p>
-<pre><code>xhr.getResponseHeader(&apos;Content-Type&apos;);
+<pre><code>xhr.getResponseHeader(&#39;Content-Type&#39;);
 xhr.getAllResponseHeaders();
 </code></pre><p>3、响应主体  </p>
 <pre><code>xhr.responseText
@@ -641,7 +966,7 @@ xhr.onreadystatechange = function () {} 监听响应状态
 xhr.status表示响应码，如200
 xhr.statusText表示响应信息，如OK
 xhr.getAllResponseHeaders() 获取全部响应头信息
-xhr.getResponseHeader(&apos;key&apos;) 获取指定头信息
+xhr.getResponseHeader(&#39;key&#39;) 获取指定头信息
 xhr.responseText、xhr.responseXML都表示响应主体
 </code></pre><p> 注：GET和POST请求方式的差异（面试题）</p>
 <p> 1、GET没有请求主体，使用xhr.send(null)</p>
@@ -652,16 +977,233 @@ xhr.responseText、xhr.responseXML都表示响应主体
 <p> 6、GET大小限制约4K，POST则没有限制</p>
 <p> 问题？如何获取复杂数据呢？</p>
 <h4 id="8-3、-XML"><a href="#8-3、-XML" class="headerlink" title="8.3、 XML"></a>8.3、 XML</h4><p>1、必须有一个根元素<br>2、不可有空格、不可以数字或.开头、大小写敏感<br>3、不可交叉嵌套<br>4、属性双引号（浏览器自动修正成双引号了）<br>5、特殊符号要使用实体<br>6、注释和HTML一样<br>虽然可以描述和传输复杂数据，但是其解析过于复杂并且体积较大，所以实现开发已经很少使用了。</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="php"><span class="meta">&lt;?</span>xml version=<span class="string">"1.0"</span> encoding=<span class="string">"UTF-8"</span><span class="meta">?&gt;</span></span></span><br><span class="line"><span class="tag">&lt;<span class="name">root</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">arrayList</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">array</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">src</span>&gt;</span>images/banner.jpg<span class="tag">&lt;/<span class="name">src</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">newPirce</span>&gt;</span>12.00<span class="tag">&lt;/<span class="name">newPirce</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">oldPrice</span>&gt;</span>30.00<span class="tag">&lt;/<span class="name">oldPrice</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">array</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">array</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">src</span>&gt;</span>images/banner.jpg<span class="tag">&lt;/<span class="name">src</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">newPirce</span>&gt;</span>12.00<span class="tag">&lt;/<span class="name">newPirce</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">oldPrice</span>&gt;</span>30.00<span class="tag">&lt;/<span class="name">oldPrice</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">array</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">arrayList</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">root</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span> </span><br><span class="line">    header(<span class="string">'Content-Type:text/xml;charset=utf-8'</span>);</span><br><span class="line">    <span class="comment">/*以xml格式传输数据的时候要求响应内容格式是   text/xml*/</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">/*file_get_contents 获取文件内容*/</span></span><br><span class="line">    $xml = file_get_contents(<span class="string">'01.xml'</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">/*输出xml内容*/</span></span><br><span class="line">    <span class="keyword">echo</span> $xml;</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> xhr = <span class="keyword">new</span> XMLHttpRequest;</span><br><span class="line">xhr.open(<span class="string">'get'</span>,<span class="string">'01.php'</span>);</span><br><span class="line">xhr.send(<span class="literal">null</span>);</span><br><span class="line">xhr.onreadystatechange = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(xhr.status == <span class="number">200</span> &amp;&amp; xhr.readyState == <span class="number">4</span>)&#123;</span><br><span class="line">        <span class="comment">/*获取到XML格式内容  放回的是DOM对象  document*/</span></span><br><span class="line">        <span class="keyword">var</span> xml = xhr.responseXML;</span><br><span class="line">        <span class="comment">/*通过选着器可以获取到xml的数据*/</span></span><br><span class="line">        <span class="built_in">console</span>.log(xml.querySelectorAll(<span class="string">'array'</span>)[<span class="number">0</span>].querySelector(<span class="string">'src'</span>).innerHTML);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;root&gt;
+    &lt;arrayList&gt;
+        &lt;array&gt;
+            &lt;src&gt;images/banner.jpg&lt;/src&gt;
+            &lt;newPirce&gt;12.00&lt;/newPirce&gt;
+            &lt;oldPrice&gt;30.00&lt;/oldPrice&gt;
+        &lt;/array&gt;
+        &lt;array&gt;
+            &lt;src&gt;images/banner.jpg&lt;/src&gt;
+            &lt;newPirce&gt;12.00&lt;/newPirce&gt;
+            &lt;oldPrice&gt;30.00&lt;/oldPrice&gt;
+        &lt;/array&gt;
+    &lt;/arrayList&gt;
+&lt;/root&gt;
+</code></pre>
+<pre><code class="php">&lt;?php 
+    header(&#39;Content-Type:text/xml;charset=utf-8&#39;);
+    /*以xml格式传输数据的时候要求响应内容格式是   text/xml*/
+
+    /*file_get_contents 获取文件内容*/
+    $xml = file_get_contents(&#39;01.xml&#39;);
+
+    /*输出xml内容*/
+    echo $xml;
+?&gt;
+</code></pre>
+<pre><code class="javascript">var xhr = new XMLHttpRequest;
+xhr.open(&#39;get&#39;,&#39;01.php&#39;);
+xhr.send(null);
+xhr.onreadystatechange = function(){
+    if(xhr.status == 200 &amp;&amp; xhr.readyState == 4){
+        /*获取到XML格式内容  放回的是DOM对象  document*/
+        var xml = xhr.responseXML;
+        /*通过选着器可以获取到xml的数据*/
+        console.log(xml.querySelectorAll(&#39;array&#39;)[0].querySelector(&#39;src&#39;).innerHTML);
+    }
+}
+</code></pre>
 <h4 id="8-4、-JSON"><a href="#8-4、-JSON" class="headerlink" title="8.4、 JSON"></a>8.4、 JSON</h4><p>即 JavaScript Object Notation，另一种轻量级的文本数据交换格式，独立于语言。</p>
 <p>1、数据在名称/值对中<br>2、数据由逗号分隔(最后一个健/值对不能带逗号)<br>3、花括号保存对象方括号保存数组<br>4、使用双引号  </p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[</span><br><span class="line">  &#123;<span class="attr">"src"</span>:<span class="string">"images/detail01.jpg"</span>,<span class="attr">"oldPrice"</span>:<span class="string">"10.12"</span>,<span class="attr">"newPrice"</span>:<span class="string">"130.00"</span>&#125;,</span><br><span class="line">  &#123;<span class="attr">"src"</span>:<span class="string">"images/detail02.jpg"</span>,<span class="attr">"oldPrice"</span>:<span class="string">"1.00"</span>,<span class="attr">"newPrice"</span>:<span class="string">"11.00"</span>&#125;,</span><br><span class="line">  &#123;<span class="attr">"src"</span>:<span class="string">"images/detail03.jpg"</span>,<span class="attr">"oldPrice"</span>:<span class="string">"100.00"</span>,<span class="attr">"newPrice"</span>:<span class="string">"1000.00"</span>&#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<pre><code class="JSON">[
+  {&quot;src&quot;:&quot;images/detail01.jpg&quot;,&quot;oldPrice&quot;:&quot;10.12&quot;,&quot;newPrice&quot;:&quot;130.00&quot;},
+  {&quot;src&quot;:&quot;images/detail02.jpg&quot;,&quot;oldPrice&quot;:&quot;1.00&quot;,&quot;newPrice&quot;:&quot;11.00&quot;},
+  {&quot;src&quot;:&quot;images/detail03.jpg&quot;,&quot;oldPrice&quot;:&quot;100.00&quot;,&quot;newPrice&quot;:&quot;1000.00&quot;}
+]
+</code></pre>
 <p>JSON数据在不同语言进行传输时，类型为字符串，不同的语言各自也都对应有解析方法，需要解析完成后才能读取</p>
-<p><strong>1、PHP解析方法</strong><br>json_encode()、json_decode()<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span> </span><br><span class="line">    header(<span class="string">'Content-Type:text/html;charset=utf-8'</span>);</span><br><span class="line">    <span class="comment">/*以json格式传输数据的时候要求响应内容格式是   application/json*/</span></span><br><span class="line">    <span class="comment">/*注意也可以不设置  但是这遵循的一个规范*/</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">/*file_get_contents 获取文件内容*/</span></span><br><span class="line">    $json = file_get_contents(<span class="string">'01.json'</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">/*输出json内容*/</span></span><br><span class="line">    <span class="keyword">echo</span> $json;</span><br><span class="line">    <span class="keyword">echo</span> <span class="string">'&lt;br&gt;&lt;br&gt;'</span>;</span><br><span class="line"></span><br><span class="line">    $array = <span class="keyword">array</span>(</span><br><span class="line">        <span class="keyword">array</span>(<span class="string">'src'</span>=&gt;<span class="string">'images/detail01.jpg'</span>,<span class="string">'newPrice'</span>=&gt;<span class="string">'12.00'</span>,<span class="string">'oldPrice'</span>=&gt;<span class="string">'455.00'</span>),</span><br><span class="line">        <span class="keyword">array</span>(<span class="string">'src'</span>=&gt;<span class="string">'images/detail02.jpg'</span>,<span class="string">'newPrice'</span>=&gt;<span class="string">'65.00'</span>,<span class="string">'oldPrice'</span>=&gt;<span class="string">'878.00'</span>),</span><br><span class="line">        <span class="keyword">array</span>( <span class="string">'src'</span>=&gt;<span class="string">'images/detail01.jpg'</span>,<span class="string">'newPrice'</span>=&gt;<span class="string">'100.00'</span>,<span class="string">'oldPrice'</span>=&gt;<span class="string">'1000.00'</span>)</span><br><span class="line">    );</span><br><span class="line"></span><br><span class="line">    <span class="comment">/*将php数组转化成json字符*/</span></span><br><span class="line">    $json_array = json_encode($array);</span><br><span class="line">    <span class="keyword">echo</span> $json_array;</span><br><span class="line">    <span class="keyword">echo</span> <span class="string">'&lt;br&gt;&lt;br&gt;'</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/*将json字符转化成php数组*/</span></span><br><span class="line">    $array_json = json_decode($json_array);</span><br><span class="line">    <span class="keyword">echo</span> $array_json;</span><br><span class="line">    <span class="keyword">echo</span> <span class="string">'&lt;br&gt;&lt;br&gt;'</span>;</span><br><span class="line"><span class="meta">?&gt;</span></span><br><span class="line">```  </span><br><span class="line">**<span class="number">1</span>、Javascript 解析方法**  </span><br><span class="line">JSON对象  JSON.parse()、JSON.stringify()；  </span><br><span class="line">JSON兼容处理json2.js  </span><br><span class="line">总结：JSON体积小、解析方便且高效，在实际开发成为首选。</span><br><span class="line">```javascript</span><br><span class="line">    <span class="keyword">var</span> xhr = <span class="keyword">new</span> XMLHttpRequest;</span><br><span class="line">    xhr.open(<span class="string">'get'</span>,<span class="string">'01.php'</span>);</span><br><span class="line">    xhr.send(<span class="keyword">null</span>);</span><br><span class="line">    xhr.onreadystatechange = <span class="function"><span class="keyword">function</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(xhr.status == <span class="number">200</span> &amp;&amp; xhr.readyState == <span class="number">4</span>)&#123;</span><br><span class="line">            <span class="comment">/*获取仅仅是字符串*/</span></span><br><span class="line">            <span class="keyword">var</span> text = xhr.responseText;</span><br><span class="line">            </span><br><span class="line">            <span class="comment">/*需要把字符串转化成JSON对象*/</span></span><br><span class="line">            <span class="keyword">var</span> json_obj = JSON.parse(text);</span><br><span class="line">            console.log(json_obj);</span><br><span class="line">    </span><br><span class="line">            <span class="comment">/*我们也可以把JSON对象转化成字符串*/</span></span><br><span class="line">            <span class="keyword">var</span> json_str = JSON.stringify(json_obj);</span><br><span class="line">            console.log(json_str);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
-<h4 id="8-5、-兼容性"><a href="#8-5、-兼容性" class="headerlink" title="8.5、 兼容性"></a>8.5、 兼容性</h4><p><strong>关于IE的兼容方面，了解即可。</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">XHR</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> xhr;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        xhr = <span class="keyword">new</span> XMLHttpRequest();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">/*如果 try内的程序运行错误  抛出异常  捕捉异常  上面程序当中运行的错误*/</span></span><br><span class="line">    <span class="keyword">catch</span>(e) &#123;</span><br><span class="line">        <span class="comment">/*在不同的IE版本下初始  ActiveXObject  需要传入的标识*/</span></span><br><span class="line">        <span class="keyword">var</span> IEXHRVers =[<span class="string">"Msxml3.XMLHTTP"</span>,<span class="string">"Msxml2.XMLHTTP"</span>,<span class="string">"Microsoft.XMLHTTP"</span>];</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;IEXHRVers.length;i++) &#123;</span><br><span class="line">            <span class="keyword">try</span> &#123;</span><br><span class="line">                xhr = <span class="keyword">new</span> ActiveXObject(IEXHRVers[i]);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">catch</span>(e) &#123;</span><br><span class="line">                <span class="comment">/*如果出现错误的时候  停止当次的循环*/</span></span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> xhr;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h4 id="8-6、-封装ajax工具函数"><a href="#8-6、-封装ajax工具函数" class="headerlink" title="8.6、 封装ajax工具函数"></a>8.6、 封装ajax工具函数</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * ITCAST WEB</span></span><br><span class="line"><span class="comment"> * Created by zhousg on 2016/5/24.</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * 1. 请求的类型                type    get post</span></span><br><span class="line"><span class="comment"> * 2. 请求地址                  url</span></span><br><span class="line"><span class="comment"> * 3. 是异步的还是同步的         async   false true</span></span><br><span class="line"><span class="comment"> * 4. 请求内容的格式            contentType</span></span><br><span class="line"><span class="comment"> * 5. 传输的数据                data    json对象</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * 6.响应成功处理函数           success   function</span></span><br><span class="line"><span class="comment"> * 7.响应失败的处理函数         error     function</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * 这些都是动态参数  参数对象  options</span></span><br><span class="line"><span class="comment"> * */</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/*封装一个函数*/</span></span><br><span class="line"><span class="built_in">window</span>.$ = &#123;&#125;;</span><br><span class="line"><span class="comment">/*申明一个ajax的方法*/</span></span><br><span class="line">$.ajax = <span class="function"><span class="keyword">function</span>(<span class="params">options</span>)</span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span>(!options || <span class="keyword">typeof</span> options != <span class="string">'object'</span>)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/*请求的类型*/</span></span><br><span class="line">    <span class="keyword">var</span> type = options.type || <span class="string">'get'</span>;<span class="comment">/*默认get*/</span></span><br><span class="line">    <span class="comment">/*请求地址 */</span></span><br><span class="line">    <span class="keyword">var</span> url = options.url || location.pathname;<span class="comment">/*当前的地址*/</span></span><br><span class="line">    <span class="comment">/*是异步的还是同步的 */</span></span><br><span class="line">    <span class="keyword">var</span> <span class="keyword">async</span> = (options.async === <span class="literal">false</span>)?<span class="literal">false</span>:<span class="literal">true</span>;<span class="comment">/*默认异步*/</span></span><br><span class="line">    <span class="comment">/*请求内容的格式 */</span></span><br><span class="line">    <span class="keyword">var</span> contentType = options.contentType || <span class="string">"text/html"</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/*传输的数据 */</span></span><br><span class="line">    <span class="keyword">var</span> data = options.data || &#123;&#125;;<span class="comment">/*｛name:'',age:''｝*/</span></span><br><span class="line">    <span class="comment">/*在提交的时候需要转成 name=xjj 这种格式*/</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> dataStr = <span class="string">''</span><span class="comment">/*数据字符串*/</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> key <span class="keyword">in</span> data)&#123;</span><br><span class="line">        dataStr += key+<span class="string">'='</span>+data[key]+<span class="string">'&amp;'</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    dataStr = dataStr &amp;&amp; dataStr.slice(<span class="number">0</span>,<span class="number">-1</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">/*ajax 编程*/</span></span><br><span class="line">    <span class="keyword">var</span> xhr = <span class="keyword">new</span> XMLHttpRequest();</span><br><span class="line"></span><br><span class="line">    <span class="comment">/*请求行*/</span></span><br><span class="line">    <span class="comment">/*(type=='get'?url+'?'+dataStr:url)判断当前的请求类型*/</span></span><br><span class="line">    xhr.open(type,(type==<span class="string">'get'</span>?url+<span class="string">'?'</span>+dataStr:url),<span class="keyword">async</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">/*请求头*/</span></span><br><span class="line">    <span class="keyword">if</span>(type == <span class="string">'post'</span>)&#123;</span><br><span class="line">        xhr.setRequestHeader(<span class="string">'Content-Type'</span>,<span class="string">'application/x-www-form-urlencoded'</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/*请求主体*/</span></span><br><span class="line">    <span class="comment">/*需要判断请求类型*/</span></span><br><span class="line">    xhr.send(type==<span class="string">'get'</span>?<span class="literal">null</span>:dataStr);</span><br><span class="line"></span><br><span class="line">    <span class="comment">/*监听响应状态的改变  响应状态*/</span></span><br><span class="line">    xhr.onreadystatechange = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="comment">/*请求响应完成并且成功*/</span></span><br><span class="line">        <span class="keyword">if</span>(xhr.readyState == <span class="number">4</span> &amp;&amp; xhr.status == <span class="number">200</span>)&#123;</span><br><span class="line">            <span class="comment">/*success*/</span></span><br><span class="line">            <span class="keyword">var</span> data = <span class="string">''</span>;</span><br><span class="line">            <span class="keyword">var</span> contentType = xhr.getResponseHeader(<span class="string">'Content-Type'</span>);</span><br><span class="line">            <span class="comment">/*如果我们服务器返回的是xml*/</span></span><br><span class="line">            <span class="keyword">if</span>(contentType.indexOf(<span class="string">'xml'</span>) &gt; <span class="number">-1</span>)&#123;</span><br><span class="line">                data = xhr.responseXML;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">/*如果我们的服务器返回的是json字符串*/</span></span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(contentType.indexOf(<span class="string">'json'</span>) &gt; <span class="number">-1</span>)&#123;</span><br><span class="line">                <span class="comment">/*转化json对象*/</span></span><br><span class="line">                data = <span class="built_in">JSON</span>.parse(xhr.responseText);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">/*否则的话他就是字符串*/</span></span><br><span class="line">            <span class="keyword">else</span>&#123;</span><br><span class="line">                data = xhr.responseText;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="comment">/*回调 成功处理函数*/</span></span><br><span class="line"></span><br><span class="line">            options.success &amp;&amp; options.success(data);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">/*计时请求xhr.status不成功  他也需要的响应完成才认作是一个错误的请求*/</span></span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(xhr.readyState == <span class="number">4</span>)&#123;</span><br><span class="line">            <span class="comment">/*error*/</span></span><br><span class="line">            options.error &amp;&amp; options.error(<span class="string">'you request fail !'</span>);</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">$.post = <span class="function"><span class="keyword">function</span>(<span class="params">options</span>)</span>&#123;</span><br><span class="line">    options.type = <span class="string">'post'</span>;</span><br><span class="line">    $.ajax(options);</span><br><span class="line">&#125;</span><br><span class="line">$.get = <span class="function"><span class="keyword">function</span>(<span class="params">options</span>)</span>&#123;</span><br><span class="line">    options.type = <span class="string">'get'</span>;</span><br><span class="line">    $.ajax(options);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>1、PHP解析方法</strong><br>json_encode()、json_decode()  </p>
+<pre><code class="PHP">&lt;?php 
+    header(&#39;Content-Type:text/html;charset=utf-8&#39;);
+    /*以json格式传输数据的时候要求响应内容格式是   application/json*/
+    /*注意也可以不设置  但是这遵循的一个规范*/
+
+    /*file_get_contents 获取文件内容*/
+    $json = file_get_contents(&#39;01.json&#39;);
+
+    /*输出json内容*/
+    echo $json;
+    echo &#39;&lt;br&gt;&lt;br&gt;&#39;;
+
+    $array = array(
+        array(&#39;src&#39;=&gt;&#39;images/detail01.jpg&#39;,&#39;newPrice&#39;=&gt;&#39;12.00&#39;,&#39;oldPrice&#39;=&gt;&#39;455.00&#39;),
+        array(&#39;src&#39;=&gt;&#39;images/detail02.jpg&#39;,&#39;newPrice&#39;=&gt;&#39;65.00&#39;,&#39;oldPrice&#39;=&gt;&#39;878.00&#39;),
+        array( &#39;src&#39;=&gt;&#39;images/detail01.jpg&#39;,&#39;newPrice&#39;=&gt;&#39;100.00&#39;,&#39;oldPrice&#39;=&gt;&#39;1000.00&#39;)
+    );
+
+    /*将php数组转化成json字符*/
+    $json_array = json_encode($array);
+    echo $json_array;
+    echo &#39;&lt;br&gt;&lt;br&gt;&#39;;
+
+    /*将json字符转化成php数组*/
+    $array_json = json_decode($json_array);
+    echo $array_json;
+    echo &#39;&lt;br&gt;&lt;br&gt;&#39;;
+?&gt;
+</code></pre>
+<p><strong>1、Javascript 解析方法</strong><br>JSON对象  JSON.parse()、JSON.stringify()；<br>JSON兼容处理json2.js<br>总结：JSON体积小、解析方便且高效，在实际开发成为首选。</p>
+<pre><code class="javascript">    var xhr = new XMLHttpRequest;
+    xhr.open(&#39;get&#39;,&#39;01.php&#39;);
+    xhr.send(null);
+    xhr.onreadystatechange = function(){
+        if(xhr.status == 200 &amp;&amp; xhr.readyState == 4){
+            /*获取仅仅是字符串*/
+            var text = xhr.responseText;
+
+            /*需要把字符串转化成JSON对象*/
+            var json_obj = JSON.parse(text);
+            console.log(json_obj);
+
+            /*我们也可以把JSON对象转化成字符串*/
+            var json_str = JSON.stringify(json_obj);
+            console.log(json_str);
+        }
+    }
+</code></pre>
+<h4 id="8-5、-兼容性"><a href="#8-5、-兼容性" class="headerlink" title="8.5、 兼容性"></a>8.5、 兼容性</h4><p><strong>关于IE的兼容方面，了解即可。</strong></p>
+<pre><code class="javascript">    function XHR() {
+        var xhr;
+        try {
+            xhr = new XMLHttpRequest();
+        }
+        /*如果 try内的程序运行错误  抛出异常  捕捉异常  上面程序当中运行的错误*/
+        catch(e) {
+            /*在不同的IE版本下初始  ActiveXObject  需要传入的标识*/
+            var IEXHRVers =[&quot;Msxml3.XMLHTTP&quot;,&quot;Msxml2.XMLHTTP&quot;,&quot;Microsoft.XMLHTTP&quot;];
+
+            for (var i=0;i&lt;IEXHRVers.length;i++) {
+                try {
+                    xhr = new ActiveXObject(IEXHRVers[i]);
+                }
+                catch(e) {
+                    /*如果出现错误的时候  停止当次的循环*/
+                    continue;
+                }
+            }
+        }
+        return xhr;
+    }
+</code></pre>
+<h4 id="8-6、-封装ajax工具函数"><a href="#8-6、-封装ajax工具函数" class="headerlink" title="8.6、 封装ajax工具函数"></a>8.6、 封装ajax工具函数</h4><pre><code class="javascript">/**
+ * ITCAST WEB
+ * Created by zhousg on 2016/5/24.
+ */
+/*
+ * 1. 请求的类型                type    get post
+ * 2. 请求地址                  url
+ * 3. 是异步的还是同步的         async   false true
+ * 4. 请求内容的格式            contentType
+ * 5. 传输的数据                data    json对象
+ *
+ * 6.响应成功处理函数           success   function
+ * 7.响应失败的处理函数         error     function
+ *
+ * 这些都是动态参数  参数对象  options
+ * */
+
+/*封装一个函数*/
+window.$ = {};
+/*申明一个ajax的方法*/
+$.ajax = function(options){
+
+    if(!options || typeof options != &#39;object&#39;){
+        return false;
+    }
+
+    /*请求的类型*/
+    var type = options.type || &#39;get&#39;;/*默认get*/
+    /*请求地址 */
+    var url = options.url || location.pathname;/*当前的地址*/
+    /*是异步的还是同步的 */
+    var async = (options.async === false)?false:true;/*默认异步*/
+    /*请求内容的格式 */
+    var contentType = options.contentType || &quot;text/html&quot;;
+
+    /*传输的数据 */
+    var data = options.data || {};/*｛name:&#39;&#39;,age:&#39;&#39;｝*/
+    /*在提交的时候需要转成 name=xjj 这种格式*/
+
+    var dataStr = &#39;&#39;/*数据字符串*/
+
+    for(var key in data){
+        dataStr += key+&#39;=&#39;+data[key]+&#39;&amp;&#39;;
+    }
+
+    dataStr = dataStr &amp;&amp; dataStr.slice(0,-1);
+
+    /*ajax 编程*/
+    var xhr = new XMLHttpRequest();
+
+    /*请求行*/
+    /*(type==&#39;get&#39;?url+&#39;?&#39;+dataStr:url)判断当前的请求类型*/
+    xhr.open(type,(type==&#39;get&#39;?url+&#39;?&#39;+dataStr:url),async);
+
+    /*请求头*/
+    if(type == &#39;post&#39;){
+        xhr.setRequestHeader(&#39;Content-Type&#39;,&#39;application/x-www-form-urlencoded&#39;);
+    }
+
+    /*请求主体*/
+    /*需要判断请求类型*/
+    xhr.send(type==&#39;get&#39;?null:dataStr);
+
+    /*监听响应状态的改变  响应状态*/
+    xhr.onreadystatechange = function(){
+        /*请求响应完成并且成功*/
+        if(xhr.readyState == 4 &amp;&amp; xhr.status == 200){
+            /*success*/
+            var data = &#39;&#39;;
+            var contentType = xhr.getResponseHeader(&#39;Content-Type&#39;);
+            /*如果我们服务器返回的是xml*/
+            if(contentType.indexOf(&#39;xml&#39;) &gt; -1){
+                data = xhr.responseXML;
+            }
+            /*如果我们的服务器返回的是json字符串*/
+            else if(contentType.indexOf(&#39;json&#39;) &gt; -1){
+                /*转化json对象*/
+                data = JSON.parse(xhr.responseText);
+            }
+            /*否则的话他就是字符串*/
+            else{
+                data = xhr.responseText;
+            }
+
+            /*回调 成功处理函数*/
+
+            options.success &amp;&amp; options.success(data);
+        }
+        /*计时请求xhr.status不成功  他也需要的响应完成才认作是一个错误的请求*/
+        else if(xhr.readyState == 4){
+            /*error*/
+            options.error &amp;&amp; options.error(&#39;you request fail !&#39;);
+
+        }
+
+    }
+}
+$.post = function(options){
+    options.type = &#39;post&#39;;
+    $.ajax(options);
+}
+$.get = function(options){
+    options.type = &#39;get&#39;;
+    $.ajax(options);
+}
+</code></pre>
 <h4 id="8-7、-jquery的ajax"><a href="#8-7、-jquery的ajax" class="headerlink" title="8.7、 jquery的ajax"></a>8.7、 jquery的ajax</h4><ul>
 <li>jQuery为我们提供了更强大的Ajax封装</li>
 <li>$.ajax({}) 可配置方式发起Ajax请求</li>
@@ -684,7 +1226,8 @@ xhr.responseText、xhr.responseXML都表示响应主体
 <p><strong>具体参考代码</strong></p>
 <h2 id="9、模版引擎"><a href="#9、模版引擎" class="headerlink" title="9、模版引擎"></a>9、模版引擎</h2><h4 id="9-1、-artTemplate-原生-js-模板语法版"><a href="#9-1、-artTemplate-原生-js-模板语法版" class="headerlink" title="9.1、 artTemplate 原生 js 模板语法版"></a>9.1、 artTemplate 原生 js 模板语法版</h4><p><strong>使用</strong></p>
 <p>在页面中引用模板引擎：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"dist/template-native.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<pre><code class="HTML">&lt;script src=&quot;dist/template-native.js&quot;&gt;&lt;/script&gt;
+</code></pre>
 <p>下载(<a href="https://raw.github.com/aui/artTemplate/master/dist/template-native.js" target="_blank" rel="external">https://raw.github.com/aui/artTemplate/master/dist/template-native.js</a>)</p>
 <p><strong>表达式</strong></p>
 <pre><code>&lt;% 与 %&gt; 符号包裹起来的语句则为模板的逻辑表达式。
@@ -702,12 +1245,12 @@ xhr.responseText、xhr.responseXML都表示响应主体
             <li>条目内容 <%=i +="" 1%=""> ：<%=list[i]%></%=list[i]%></%=i></li>
         <%}%&gt; &lt;="" ul&gt;="" <="" code=""></%}%&gt;></code></pre><p>模板不能访问全局对象，公用的方法请参见文档 辅助方法 章节<br>模板包含表达式</p>
 <p>用于嵌入子模板。</p>
-<pre><code>&lt;% include(&apos;template_name&apos;) %&gt;
+<pre><code>&lt;% include(&#39;template_name&#39;) %&gt;
 </code></pre><p>子模板默认共享当前数据，亦可以指定数据：</p>
-<pre><code>&lt;% include(&apos;template_name&apos;, news_list) %&gt;
+<pre><code>&lt;% include(&#39;template_name&#39;, news_list) %&gt;
 </code></pre><p>辅助方法</p>
 <p>使用template.helper(name, callback)注册公用辅助方法，例如一个基本的 UBB 替换方法：</p>
-<pre><code>template.helper(&apos;$ubb2html&apos;, function (content) {
+<pre><code>template.helper(&#39;$ubb2html&#39;, function (content) {
     // 处理字符串...
     return content;
 });
@@ -838,7 +1381,7 @@ http://www.example.com/detail/index.html    同源    只是目录不同
             </a>
             <ul class="dropdown-menu">
             <li>
-                <a class="sidebar_archives-link" href="/archives/2021/03/">三月 2021<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/11/">十一月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/08/">八月 2017<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/07/">七月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/06/">六月 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/04/">四月 2017<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/03/">三月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/01/">一月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/12/">十二月 2016<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/08/">八月 2016<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/07/">七月 2016<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/06/">六月 2016<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/05/">五月 2016<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/04/">四月 2016<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/03/">三月 2016<span class="sidebar_archives-count">5</span></a>
+                <a class="sidebar_archives-link" href="/archives/2021/03/">三月 2021<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/11/">十一月 2017<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/08/">八月 2017<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/07/">七月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/06/">六月 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/04/">四月 2017<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/03/">三月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/01/">一月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/12/">十二月 2016<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/08/">八月 2016<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/07/">七月 2016<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/06/">六月 2016<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/05/">五月 2016<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/04/">四月 2016<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/03/">三月 2016<span class="sidebar_archives-count">5</span></a>
             </ul>
         </li>
         
@@ -1052,6 +1595,10 @@ It will not impact the appearance and can give developers a lot of support :)
 <!-- Import prettify js  -->
 
 
+    
+        <script>lsloader.load("hanabi","/js/hanabi-browser-bundle.js?Pki5+pzkluqu53g+ouMWpA==", true)</script>
+    
+
 
 <!-- Window Load -->
 <!-- add class for prettify -->
@@ -1062,6 +1609,22 @@ It will not impact the appearance and can give developers a lot of support :)
     });
 
     
+    
+        
+            HanabiBrowser.clearColors();
+        
+        
+            
+                
+                    HanabiBrowser.putColor('#006bc4');
+                
+                    HanabiBrowser.putColor('#1687e5');
+                
+                    HanabiBrowser.putColor('#57a9f2');
+                
+            
+        
+        HanabiBrowser.start('pre code',false);
     
 </script>
 

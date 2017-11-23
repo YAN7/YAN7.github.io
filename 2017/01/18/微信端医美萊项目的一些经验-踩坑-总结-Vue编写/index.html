@@ -95,7 +95,7 @@
     <!-- Import CSS -->
     
         <style id="material_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_css","/css/material.min.css?Z7a72R1E4SxzBKR/WGctOA==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
-        <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","/css/style.min.css?MKetZV3cUTfDxvMffaOezg==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+        <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","/css/style.min.css?hFq70/8jqTnrumLJYV+O9g==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
 
         
 
@@ -500,20 +500,34 @@
 <li>Vue的指令绑定事件在没有参数的时候是不需要括号的，而angular是需要括号的，刚开始写Vue的时候一度给我造成了很多的困扰。</li>
 <li>使用v-route跳转时，在使用路由是要使用<code>this.$router.push</code>，接受路由参数时要使用<code>this.$route</code>,注意在使用是$router，在接收时是$route，少了一个r。</li>
 <li><p>porps这个对象的作用是限制数据的数据类型.</p>
- <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">props: &#123;</span><br><span class="line">	max: <span class="built_in">Number</span>,</span><br><span class="line">	title: <span class="built_in">String</span>,</span><br><span class="line">	options: &#123;</span><br><span class="line">		type: <span class="built_in">Array</span>,</span><br><span class="line">	&#125;,</span><br><span class="line">	name: <span class="built_in">String</span>,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="js"> props: {
+     max: Number,
+     title: String,
+     options: {
+         type: Array,
+     },
+     name: String,
+ }
+</code></pre>
 </li>
 <li><p>vue自定义过滤器有两个或两个以上的参数时，参数跟在过滤器名称后面，并用括号阔起来.</p>
- <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#123;message | filter&#125;&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="js"> {{message | filter}}
+</code></pre>
 </li>
-</ol>
-<ol>
 <li><p>阻止默认事件</p>
- <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">e.preventDefault();</span><br></pre></td></tr></table></figure>
+<pre><code class="js"> e.preventDefault();
+</code></pre>
 </li>
-</ol>
-<ol>
 <li><p><strong><em>watch</em></strong> 是VUE的一个对象，这个对象里面的方法可以用来监视值的变化，如果监视的值有变化，则会执行对象的函数，该函数接受两个参数，第一个参数的监视的值的当前的值，第二个参数是监视的值的之前的值.</p>
- <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">watch: &#123;</span><br><span class="line">	keyword: <span class="function"><span class="keyword">function</span>(<span class="params">nowVal, oldVal</span>) </span>&#123;</span><br><span class="line">		<span class="comment">// keyword: 监视的值</span></span><br><span class="line">		<span class="comment">// nowVal: keyword当前的值</span></span><br><span class="line">		<span class="comment">// oldVal: keyword上一次改变前的值</span></span><br><span class="line">		<span class="comment">// 如果keyword的值有改变就会执行这里的函数...</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="js"> watch: {
+     keyword: function(nowVal, oldVal) {
+         // keyword: 监视的值
+         // nowVal: keyword当前的值
+         // oldVal: keyword上一次改变前的值
+         // 如果keyword的值有改变就会执行这里的函数...
+     }
+ }
+</code></pre>
 </li>
 </ol>
 <h2 id="一些踩过的坑"><a href="#一些踩过的坑" class="headerlink" title="一些踩过的坑"></a>一些踩过的坑</h2><ol>
@@ -552,7 +566,8 @@
 <h2 id="一些什么东西"><a href="#一些什么东西" class="headerlink" title="一些什么东西"></a>一些什么东西</h2><ol>
 <li>判断对象是否是空对象的方法,可以用对象的原生方法Object.getPropertyNames()来检测，这个方法返回的是一个所有的元素键的数组，如果该数组长度为0，则表示对象为空</li>
 </ol>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Objbect.getOwnPropertyNames(传入你要检测的对象).length;</span><br></pre></td></tr></table></figure>
+<pre><code class="js">Objbect.getOwnPropertyNames(传入你要检测的对象).length;
+</code></pre>
 <h2 id="遇到的问题"><a href="#遇到的问题" class="headerlink" title="遇到的问题"></a>遇到的问题</h2><ol>
 <li>三级联动选择地区插件不能使用</li>
 </ol>
@@ -682,7 +697,7 @@
             </a>
             <ul class="dropdown-menu">
             <li>
-                <a class="sidebar_archives-link" href="/archives/2021/03/">三月 2021<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/11/">十一月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/08/">八月 2017<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/07/">七月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/06/">六月 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/04/">四月 2017<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/03/">三月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/01/">一月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/12/">十二月 2016<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/08/">八月 2016<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/07/">七月 2016<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/06/">六月 2016<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/05/">五月 2016<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/04/">四月 2016<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/03/">三月 2016<span class="sidebar_archives-count">5</span></a>
+                <a class="sidebar_archives-link" href="/archives/2021/03/">三月 2021<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/11/">十一月 2017<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/08/">八月 2017<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/07/">七月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/06/">六月 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/04/">四月 2017<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/03/">三月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/01/">一月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/12/">十二月 2016<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/08/">八月 2016<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/07/">七月 2016<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/06/">六月 2016<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/05/">五月 2016<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/04/">四月 2016<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/03/">三月 2016<span class="sidebar_archives-count">5</span></a>
             </ul>
         </li>
         
@@ -904,6 +919,10 @@ It will not impact the appearance and can give developers a lot of support :)
 <!-- Import prettify js  -->
 
 
+    
+        <script>lsloader.load("hanabi","/js/hanabi-browser-bundle.js?Pki5+pzkluqu53g+ouMWpA==", true)</script>
+    
+
 
 <!-- Window Load -->
 <!-- add class for prettify -->
@@ -914,6 +933,22 @@ It will not impact the appearance and can give developers a lot of support :)
     });
 
     
+    
+        
+            HanabiBrowser.clearColors();
+        
+        
+            
+                
+                    HanabiBrowser.putColor('#006bc4');
+                
+                    HanabiBrowser.putColor('#1687e5');
+                
+                    HanabiBrowser.putColor('#57a9f2');
+                
+            
+        
+        HanabiBrowser.start('pre code',false);
     
 </script>
 

@@ -368,12 +368,14 @@ a {
 }
 #post-content code,
 #post-content tt {
+    tab-size: 4;
     margin: 0 2px;
     padding: 0px 5px;
     background-color: rgba(0, 0, 0, 0.04);
     border-radius: 3px;
 }
 #post-content pre>code {
+    tab-size: 4;
     margin: 0;
     padding: 0;
     white-space: pre;
@@ -410,11 +412,13 @@ a {
 }
 #post-content .gutter pre,
 #post-content .code pre {
+    tab-size: 2;
     margin: 0;
     display: block;
 }
 #post-content pre code,
 #post-content pre tt {
+    tab-size: 2;
     margin: 0;
     padding: 0;
     background-color: transparent;

@@ -95,7 +95,7 @@
     <!-- Import CSS -->
     
         <style id="material_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_css","/css/material.min.css?Z7a72R1E4SxzBKR/WGctOA==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
-        <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","/css/style.min.css?MKetZV3cUTfDxvMffaOezg==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+        <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","/css/style.min.css?hFq70/8jqTnrumLJYV+O9g==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
 
         
 
@@ -494,19 +494,33 @@
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
         <p>CSS很简单，也很复杂，人人都会用，但能用好用精就是一门艺术了。<br><a id="more"></a></p>
-<h1 id="CSS奇淫巧技"><a href="#CSS奇淫巧技" class="headerlink" title="CSS奇淫巧技"></a>CSS奇淫巧技</h1><h3 id="改变选中文本背景颜色"><a href="#改变选中文本背景颜色" class="headerlink" title="改变选中文本背景颜色"></a>改变选中文本背景颜色</h3> <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"> *<span class="selector-pseudo">::selection</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: <span class="number">#fff</span>;</span><br><span class="line">    <span class="attribute">background</span>: <span class="number">#000</span>;</span><br><span class="line"> &#125;</span><br><span class="line">*<span class="selector-pseudo">::-moz-selection</span> &#123;    </span><br><span class="line">    <span class="comment">/*Only Firefox still needs a prefix*/</span></span><br><span class="line">    <span class="attribute">color</span>: <span class="number">#fff</span>;</span><br><span class="line">    <span class="attribute">background</span>: <span class="number">#000</span>;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+<h1 id="CSS奇淫巧技"><a href="#CSS奇淫巧技" class="headerlink" title="CSS奇淫巧技"></a>CSS奇淫巧技</h1><h3 id="改变选中文本背景颜色"><a href="#改变选中文本背景颜色" class="headerlink" title="改变选中文本背景颜色"></a>改变选中文本背景颜色</h3><pre><code class="css">     *::selection {
+        color: #fff;
+        background: #000;
+     }
+    *::-moz-selection {    
+        /*Only Firefox still needs a prefix*/
+        color: #fff;
+        background: #000;
+     }
+</code></pre>
 <h3 id="背景色渐变"><a href="#背景色渐变" class="headerlink" title="背景色渐变"></a>背景色渐变</h3><h2 id="线性渐变"><a href="#线性渐变" class="headerlink" title="线性渐变"></a>线性渐变</h2><ul>
 <li><p>语法解释：</p>
 <ul>
 <li>第一次参数表示渐变的方向，可以用角度或者to top|bottom|left|right表示；</li>
 <li><p>第2-n个参数表示颜色，在颜色后面可以加上该颜色结束的位置，用百分比或者直接用长度表示</p>
-<figure class="highlight processing"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">background</span>: linear-gradient(to bottom, <span class="built_in">red</span> <span class="number">20</span>%, lightgreen <span class="number">40</span>%, <span class="built_in">blue</span>);</span><br></pre></td></tr></table></figure>
-</li>
+<pre><code>background: linear-gradient(to bottom, red 20%, lightgreen 40%, blue);
+</code></pre></li>
 </ul>
 </li>
 <li><p>跨浏览器实施渐变,这里包含了所有前缀的渐变设置。</p>
-   <figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">background-color</span>: <span class="number">#F07575</span>; <span class="comment">/* fallback color if gradients are not supported */</span></span><br><span class="line"><span class="attribute">background-image</span>: -webkit-linear-gradient(top, hsl(<span class="number">0</span>, <span class="number">80%</span>, <span class="number">70%</span>), <span class="number">#bada55</span>); <span class="comment">/* For Chrome 25 and Safari 6, iOS 6.1, Android 4.3 */</span></span><br><span class="line"><span class="attribute">background-image</span>: -moz-linear-gradient(top, hsl(<span class="number">0</span>, <span class="number">80%</span>, <span class="number">70%</span>), <span class="number">#bada55</span>); <span class="comment">/* For Firefox (3.6 to 15) */</span></span><br><span class="line"><span class="attribute">background-image</span>: -o-linear-gradient(top, hsl(<span class="number">0</span>, <span class="number">80%</span>, <span class="number">70%</span>), <span class="number">#bada55</span>); <span class="comment">/* For old Opera (11.1 to 12.0) */</span> </span><br><span class="line"><span class="attribute">background-image</span>: linear-gradient(to bottom, hsl(<span class="number">0</span>, <span class="number">80%</span>, <span class="number">70%</span>), <span class="number">#bada55</span>); <span class="comment">/* Standard syntax; must be last */</span></span><br><span class="line"><span class="attribute">filter</span>: progid:DXImageTransform.Microsoft.gradient( startColorstr=<span class="string">'#0048607d'</span>, endColorstr=<span class="string">'#a11c952d'</span>,GradientType=<span class="number">0</span> ); <span class="comment">/* IE6-8 */</span></span><br></pre></td></tr></table></figure>
-</li>
+<pre><code>     background-color: #F07575; /* fallback color if gradients are not supported */
+     background-image: -webkit-linear-gradient(top, hsl(0, 80%, 70%), #bada55); /* For Chrome 25 and Safari 6, iOS 6.1, Android 4.3 */
+     background-image: -moz-linear-gradient(top, hsl(0, 80%, 70%), #bada55); /* For Firefox (3.6 to 15) */
+     background-image: -o-linear-gradient(top, hsl(0, 80%, 70%), #bada55); /* For old Opera (11.1 to 12.0) */ 
+     background-image: linear-gradient(to bottom, hsl(0, 80%, 70%), #bada55); /* Standard syntax; must be last */
+     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=&#39;#0048607d&#39;, endColorstr=&#39;#a11c952d&#39;,GradientType=0 ); /* IE6-8 */
+</code></pre></li>
 </ul>
 
         
@@ -634,7 +648,7 @@
             </a>
             <ul class="dropdown-menu">
             <li>
-                <a class="sidebar_archives-link" href="/archives/2021/03/">三月 2021<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/11/">十一月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/08/">八月 2017<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/07/">七月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/06/">六月 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/04/">四月 2017<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/03/">三月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/01/">一月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/12/">十二月 2016<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/08/">八月 2016<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/07/">七月 2016<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/06/">六月 2016<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/05/">五月 2016<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/04/">四月 2016<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/03/">三月 2016<span class="sidebar_archives-count">5</span></a>
+                <a class="sidebar_archives-link" href="/archives/2021/03/">三月 2021<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/11/">十一月 2017<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/08/">八月 2017<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/07/">七月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/06/">六月 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/04/">四月 2017<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/03/">三月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/01/">一月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/12/">十二月 2016<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/08/">八月 2016<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/07/">七月 2016<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/06/">六月 2016<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/05/">五月 2016<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/04/">四月 2016<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/03/">三月 2016<span class="sidebar_archives-count">5</span></a>
             </ul>
         </li>
         
@@ -856,6 +870,10 @@ It will not impact the appearance and can give developers a lot of support :)
 <!-- Import prettify js  -->
 
 
+    
+        <script>lsloader.load("hanabi","/js/hanabi-browser-bundle.js?Pki5+pzkluqu53g+ouMWpA==", true)</script>
+    
+
 
 <!-- Window Load -->
 <!-- add class for prettify -->
@@ -866,6 +884,22 @@ It will not impact the appearance and can give developers a lot of support :)
     });
 
     
+    
+        
+            HanabiBrowser.clearColors();
+        
+        
+            
+                
+                    HanabiBrowser.putColor('#006bc4');
+                
+                    HanabiBrowser.putColor('#1687e5');
+                
+                    HanabiBrowser.putColor('#57a9f2');
+                
+            
+        
+        HanabiBrowser.start('pre code',false);
     
 </script>
 

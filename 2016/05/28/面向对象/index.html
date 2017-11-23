@@ -49,7 +49,7 @@
     <meta name="theme-color" content="#0097A7">
     <meta name="author" content="YAN7">
     <meta name="description" itemprop="description" content="面向对象的基本理解。">
-    <meta name="keywords" content="null,Javascript,前端,面向对象">
+    <meta name="keywords" content="null,前端,Javascript,面向对象">
 
     <!-- Import lsloader -->
     <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(key){try{localStorage.removeItem(key)}catch(e){}};lsloader.setLS=function(key,val){try{localStorage.setItem(key,val)}catch(e){}};lsloader.getLS=function(key){var val="";try{val=localStorage.getItem(key)}catch(e){val=""}return val};versionString="/*"+(window.materialVersion||"unknownVersion")+"*/";lsloader.clean=function(){try{var keys=[];for(var i=0;i<localStorage.length;i++){keys.push(localStorage.key(i))}keys.forEach(function(key){var data=lsloader.getLS(key);if(window.oldVersion){var remove=window.oldVersion.reduce(function(p,c){return p||data.indexOf("/*"+c+"*/")!==-1},false);if(remove){lsloader.removeLS(key)}}})}catch(e){}};lsloader.clean();lsloader.load=function(jsname,jspath,cssonload,isJs){if(typeof cssonload==="boolean"){isJs=cssonload;cssonload=undefined}isJs=isJs||false;cssonload=cssonload||function(){};var code;code=this.getLS(jsname);if(code&&code.indexOf(versionString)===-1){this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload,isJs);return}if(code){var versionNumber=code.split(versionString)[0];if(versionNumber!=jspath){console.log("reload:"+jspath);this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload,isJs);return}code=code.split(versionString)[1];if(isJs){this.jsRunSequence.push({name:jsname,code:code});this.runjs(jspath,jsname,code)}else{document.getElementById(jsname).appendChild(document.createTextNode(code));cssonload()}}else{this.requestResource(jsname,jspath,cssonload,isJs)}};lsloader.requestResource=function(name,path,cssonload,isJs){var that=this;if(isJs){this.iojs(path,name,function(path,name,code){that.setLS(name,path+versionString+code);that.runjs(path,name,code)})}else{this.iocss(path,name,function(code){document.getElementById(name).appendChild(document.createTextNode(code));that.setLS(name,path+versionString+code)},cssonload)}};lsloader.iojs=function(path,jsname,callback){var that=this;that.jsRunSequence.push({name:jsname,code:""});try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(path,jsname,xhr.response);return}}that.jsfallback(path,jsname)}};xhr.send(null)}catch(e){that.jsfallback(path,jsname)}};lsloader.iocss=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.iofonts=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.runjs=function(path,name,code){if(!!name&&!!code){for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code=code}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var script=document.createElement("script");script.appendChild(document.createTextNode(this.jsRunSequence[0].code));script.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(script);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var that=this;var script=document.createElement("script");script.src=this.jsRunSequence[0].path;script.type="text/javascript";this.jsRunSequence[0].status="loading";script.onload=function(){that.jsRunSequence.shift();if(that.jsRunSequence.length>0){that.runjs()}};document.body.appendChild(script)}};lsloader.tagLoad=function(path,name){this.jsRunSequence.push({name:name,code:"",path:path,status:"failed"});this.runjs()};lsloader.jsfallback=function(path,name){if(!!this.jsnamemap[name]){return}else{this.jsnamemap[name]=name}for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code="";this.jsRunSequence[k].status="failed";this.jsRunSequence[k].path=path}}this.runjs()};lsloader.cssfallback=function(path,name,cssonload){if(!!this.cssnamemap[name]){return}else{this.cssnamemap[name]=1}var link=document.createElement("link");link.type="text/css";link.href=path;link.rel="stylesheet";link.onload=link.onerror=cssonload;var root=document.getElementsByTagName("script")[0];root.parentNode.insertBefore(link,root)};lsloader.runInlineScript=function(scriptId,codeId){var code=document.getElementById(codeId).innerText;this.jsRunSequence.push({name:scriptId,code:code});this.runjs()};lsloader.loadCombo=function(jslist){var updateList="";var requestingModules={};for(var k in jslist){var LS=this.getLS(jslist[k].name);if(!!LS){var version=LS.split(versionString)[0];var code=LS.split(versionString)[1]}else{var version=""}if(version==jslist[k].path){this.jsRunSequence.push({name:jslist[k].name,code:code,path:jslist[k].path})}else{this.jsRunSequence.push({name:jslist[k].name,code:null,path:jslist[k].path,status:"comboloading"});requestingModules[jslist[k].name]=true;updateList+=(updateList==""?"":";")+jslist[k].path}}var that=this;if(!!updateList){var xhr=new XMLHttpRequest;xhr.open("get",combo+updateList,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){that.runCombo(xhr.response,requestingModules);return}}else{for(var i in that.jsRunSequence){if(requestingModules[that.jsRunSequence[i].name]){that.jsRunSequence[i].status="failed"}}that.runjs()}}};xhr.send(null)}this.runjs()};lsloader.runCombo=function(comboCode,requestingModules){comboCode=comboCode.split("/*combojs*/");comboCode.shift();for(var k in this.jsRunSequence){if(!!requestingModules[this.jsRunSequence[k].name]&&!!comboCode[0]){this.jsRunSequence[k].status="comboJS";this.jsRunSequence[k].code=comboCode[0];this.setLS(this.jsRunSequence[k].name,this.jsRunSequence[k].path+versionString+comboCode[0]);comboCode.shift()}}this.runjs()}})();</script>
@@ -95,7 +95,7 @@
     <!-- Import CSS -->
     
         <style id="material_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_css","/css/material.min.css?Z7a72R1E4SxzBKR/WGctOA==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
-        <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","/css/style.min.css?MKetZV3cUTfDxvMffaOezg==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+        <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","/css/style.min.css?hFq70/8jqTnrumLJYV+O9g==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
 
         
 
@@ -234,7 +234,7 @@
     <meta property="og:title" content="面向对象 | feYAN7">
     <meta property="og:image" content="http://yoursite.com/img/favicon.png" />
     <meta property="og:description" content="面向对象的基本理解。">
-    <meta property="og:article:tag" content="Javascript"> <meta property="og:article:tag" content="前端"> <meta property="og:article:tag" content="面向对象"> 
+    <meta property="og:article:tag" content="前端"> <meta property="og:article:tag" content="Javascript"> <meta property="og:article:tag" content="面向对象"> 
 
     
         <meta property="article:published_time" content="Sat May 28 2016 20:14:39 GMT+0800" />
@@ -283,7 +283,7 @@
             "url": "/img/favicon.png"
         }
     },
-    "keywords": ",Javascript,前端,面向对象null",
+    "keywords": ",前端,Javascript,面向对象null",
     "description": "面向对象的基本理解。",
 }
 </script>
@@ -502,7 +502,26 @@
 <li>原型方法里的this指的是具体的通过某个构造函数创建的实例。</li>
 <li>面向对象编程</li>
 </ol>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//面向对象编程</span></span><br><span class="line"><span class="comment">/*创建对象*/</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">ChangeStyle</span>(<span class="params">div,btn</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.div = <span class="built_in">document</span>.querySelector(div);</span><br><span class="line">    <span class="keyword">this</span>.btn = <span class="built_in">document</span>.querySelector(btn);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*在prototype下的方法是所有的实例都可以共用的*/</span></span><br><span class="line">ChangeStyle.prototype.init = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> _this = <span class="keyword">this</span>;</span><br><span class="line">    <span class="keyword">this</span>.btn.onclick = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        _this.div.style.width = <span class="string">"300px"</span>;</span><br><span class="line">        _this.div.style.height = <span class="string">"300px"</span>;</span><br><span class="line">        _this.div.style.backgroundColor = <span class="string">"cyan"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*创建实例*/</span></span><br><span class="line"><span class="keyword">var</span> cs = <span class="keyword">new</span> ChangeStyle(<span class="string">".box1"</span>,<span class="string">"button"</span>);</span><br><span class="line"><span class="comment">/*共享对象的方法*/</span></span><br><span class="line">cs.init();</span><br></pre></td></tr></table></figure>
+<pre><code class="javascript">//面向对象编程
+/*创建对象*/
+function ChangeStyle(div,btn) {
+    this.div = document.querySelector(div);
+    this.btn = document.querySelector(btn);
+}
+/*在prototype下的方法是所有的实例都可以共用的*/
+ChangeStyle.prototype.init = function () {
+    var _this = this;
+    this.btn.onclick = function () {
+        _this.div.style.width = &quot;300px&quot;;
+        _this.div.style.height = &quot;300px&quot;;
+        _this.div.style.backgroundColor = &quot;cyan&quot;;
+    }
+}
+/*创建实例*/
+var cs = new ChangeStyle(&quot;.box1&quot;,&quot;button&quot;);
+/*共享对象的方法*/
+cs.init();
+</code></pre>
 <p><br></p>
 <hr>
 <h2 id="section2"><a href="#section2" class="headerlink" title="section2"></a>section2</h2><ol>
@@ -511,32 +530,66 @@
 <li><p>函数有三种调用方式：</p>
 <ul>
 <li><p><strong><em>普通函数</em></strong>（调用者（this）是window，但是在es5的严格模式中this是undefined）。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"> </span><br><span class="line"> ￼￼￼<span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>)</span>&#123;<span class="meta"> 		'use strict'</span> 		<span class="built_in">console</span>.log(<span class="keyword">this</span>); 	&#125;foo();<span class="comment">//ES3中,this就是window;ES5的严格模式下,this为undefined</span></span><br></pre></td></tr></table></figure>
+<pre><code class="javascript">
+￼￼￼function foo(){
+     &#39;use strict&#39;
+     console.log(this);
+ }
+foo();//ES3中,this就是window;ES5的严格模式下,this为undefined
+</code></pre>
 </li>
-</ul>
-</li>
-</ol>
-<ul>
 <li><p><strong><em>对象方法</em></strong>,{}构造出来的函数也是Object的一个实例，和new Object出来的函数是等效的。</p>
-  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;&#125;;		obj.info = <span class="string">'hello'</span>;		obj.showInfo = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;    	<span class="built_in">console</span>.log(<span class="keyword">this</span>.info);	 &#125;foo.showInfo();<span class="comment">//对象方法中的this就是调用方法的对象</span></span><br></pre></td></tr></table></figure>
+<pre><code class="javascript">   var obj = {};
+     obj.info = &#39;hello&#39;;
+     obj.showInfo = function(){
+     console.log(this.info);
+     }
+   foo.showInfo();//对象方法中的this就是调用方法的对象
+</code></pre>
 </li>
-</ul>
-<ul>
 <li><p><strong><em>构造函数的调用</em></strong>.</p>
-  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">￼<span class="function"><span class="keyword">function</span> <span class="title">Foo</span>(<span class="params">info</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">this</span>.info = info;</span><br><span class="line">	<span class="keyword">this</span>.showInfo = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">		<span class="built_in">console</span>.log(<span class="keyword">this</span>.info);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">Foo.prototype.fn = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">	<span class="comment">//原型对象中的this就是实例对象</span></span><br><span class="line">	<span class="built_in">console</span>.log(<span class="keyword">this</span>.info);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> foo = <span class="keyword">new</span> Foo(<span class="string">"hello"</span>);</span><br><span class="line">foo.showInfo();<span class="comment">//对象方法中的this就是实例对象</span></span><br></pre></td></tr></table></figure>
+<pre><code class="javascript">    ￼function Foo(info) {
+        this.info = info;
+        this.showInfo = function() {
+            console.log(this.info);
+        }
+    }
+    Foo.prototype.fn = function() {
+        //原型对象中的this就是实例对象
+        console.log(this.info);
+    }
+    var foo = new Foo(&quot;hello&quot;);
+    foo.showInfo();//对象方法中的this就是实例对象
+</code></pre>
 </li>
-</ul>
+<li><p><strong><em>call apply</em></strong>. call和apply这两个方法都可以用来调用函数</p>
 <ul>
-<li><strong><em>call apply</em></strong>. call和apply这两个方法都可以用来调用函数<ul>
 <li>作用：可以改变函数中this的指向，借用别的对象的方法。</li>
 <li>差异：两者的第一个参数都是传谁this就指向谁，null表示不改变this指向，后面的函数自带的参数apply要以数组的方式传入。 </li>
 </ul>
 </li>
 <li><p><strong><em>调用严格模式</em></strong>：加上“use strict”。</p>
-  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"> <span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params">a,b</span>)</span>&#123;   <span class="built_in">console</span>.log(a + b);&#125;foo.call(<span class="literal">null</span>,<span class="number">1</span>,<span class="number">2</span>); foo.apply(<span class="literal">null</span>,[<span class="number">1</span>,<span class="number">2</span>]); <span class="comment">//改变this指向</span><span class="keyword">var</span> obj1 = &#123;  			<span class="attr">info</span> : <span class="string">'Tom'</span> 	&#125;; 	<span class="keyword">var</span> obj2 = &#123; 			<span class="attr">info</span> : <span class="string">'Jerry'</span> 	&#125; 	<span class="built_in">window</span>.info = <span class="string">'Spike'</span>;	<span class="keyword">var</span> showInfo = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;     		<span class="built_in">console</span>.log(<span class="keyword">this</span>.info);	&#125;;showInfo();showInfo.call(obj1);showInfo.call(obj2); <span class="comment">//调用call或apply都会自动执行对应的函数,而bind不会执行对应的函	数,只是返回了对函数的引用</span></span><br></pre></td></tr></table></figure>
+<pre><code class="javascript">function foo(a,b){
+console.log(a + b);
+}
+foo.call(null,1,2); foo.apply(null,[1,2]); //改变this指向
+var obj1 = {
+          info : &#39;Tom&#39;
+ };
+ var obj2 = {
+         info : &#39;Jerry&#39;
+ }
+ window.info = &#39;Spike&#39;;
+var showInfo = function(){
+         console.log(this.info);
+};
+showInfo();
+showInfo.call(obj1);
+showInfo.call(obj2); //调用call或apply都会自动执行对应的函数,而bind不会执行对应的函    数,只是返回了对函数的引用
+</code></pre>
 </li>
 </ul>
-<ol>
+</li>
 <li>bind：也是改变this的指向，参数传谁this就指向谁(IE678不兼容)。<ul>
 <li>和call、apply的区别：call、apply需要调用一次函数才能改变this的指向，而bind则不用。</li>
 </ul>
@@ -571,25 +624,87 @@
 <li><p>作为参数的函数</p>
 <ul>
 <li><p>引用类型传递的是地址,所以在函数内部对引用类型值的修改会同步</p>
-  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"> <span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params">data</span>)</span>&#123;</span><br><span class="line">   		<span class="comment">// console.log(data);</span></span><br><span class="line">    	data.push(<span class="number">5</span>);</span><br><span class="line">    	<span class="keyword">return</span> data;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>];</span><br><span class="line"><span class="keyword">var</span> ret = foo(arr);</span><br><span class="line"><span class="built_in">console</span>.log(arr,ret); <span class="comment">//都是返回[1，2，3，4，5]</span></span><br></pre></td></tr></table></figure>
+<pre><code class="javascript">  function foo(data){
+            // console.log(data);
+         data.push(5);
+         return data;
+ }
+ var arr = [1,2,3,4];
+ var ret = foo(arr);
+ console.log(arr,ret); //都是返回[1，2，3，4，5]
+</code></pre>
 </li>
 <li><p>基本类型传参传递的是实际的值，所以在函数内部对参数的修改不影响传递进来的参数</p>
-  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params">data</span>)</span>&#123;</span><br><span class="line">    data = <span class="number">456</span>;</span><br><span class="line">    <span class="keyword">return</span> data;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> d = <span class="number">123</span>;</span><br><span class="line"><span class="keyword">var</span> d1 = foo(d);</span><br><span class="line"><span class="built_in">console</span>.log(d,d1);</span><br></pre></td></tr></table></figure>
+<pre><code class="javascript">     function foo(data){
+         data = 456;
+         return data;
+     }
+     var d = 123;
+     var d1 = foo(d);
+     console.log(d,d1);
+</code></pre>
 </li>
 </ul>
 </li>
-<li><p>作为返回值的函数</p>
-</li>
+<li>作为返回值的函数</li>
 <li><p>函数作为参数传参，即是回调函数</p>
-<pre><code><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line">		<span class="comment">// 回调函数</span></span><br><span class="line">	    <span class="keyword">var</span> callback = <span class="function"><span class="keyword">function</span>(<span class="params">data</span>)</span>&#123;</span><br><span class="line">	        <span class="built_in">console</span>.log(<span class="string">"通知："</span>+data);</span><br><span class="line">	    &#125;</span><br><span class="line">	</span><br><span class="line">	    <span class="comment">//相当于文员</span></span><br><span class="line">	    <span class="function"><span class="keyword">function</span> <span class="title">ajax</span>(<span class="params">data</span>)</span>&#123;</span><br><span class="line">	        <span class="comment">//1、创建XHR对象</span></span><br><span class="line">	        <span class="keyword">var</span> xhr = <span class="keyword">new</span> XMLHttpRequest();</span><br><span class="line">	        <span class="comment">//2、发送前的准备工作</span></span><br><span class="line">	        xhr.open(<span class="string">'get'</span>,<span class="string">'http://localhost/abc.php'</span>,<span class="literal">true</span>);</span><br><span class="line">	        <span class="comment">//3、执行发送动作</span></span><br><span class="line">	        xhr.send(<span class="literal">null</span>);</span><br><span class="line">	        <span class="comment">//4、指定回调函数</span></span><br><span class="line">	        xhr.onreadystatechange = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	            <span class="comment">//4表示服务器端已经完全返回结果，但是数据是否正确还不确定</span></span><br><span class="line">	            <span class="keyword">if</span>(xhr.readyState === <span class="number">4</span>)&#123;</span><br><span class="line">	                <span class="comment">//200表示服务器返回的数据是正确的</span></span><br><span class="line">	                <span class="comment">//404表示没有找到请求的资源</span></span><br><span class="line">	                <span class="comment">//500服务器端错误</span></span><br><span class="line">	                <span class="keyword">if</span>(xhr.status === <span class="number">200</span>)&#123;</span><br><span class="line">	                    <span class="comment">// var result = '空调坏了';</span></span><br><span class="line">	                    <span class="comment">// var result = '服务器挂了';</span></span><br><span class="line">	                    <span class="keyword">var</span> result = xhr.responseText;</span><br><span class="line">	                    data(result);</span><br><span class="line">	                &#125;</span><br><span class="line">	            &#125;</span><br><span class="line">	        &#125;</span><br><span class="line">	    &#125;</span><br><span class="line">	    ajax(callback);	  </span><br><span class="line">	       </span><br><span class="line">    	</span><br><span class="line"><span class="number">2.</span> ***数组的排序***</span><br><span class="line"> - 给数组排序</span><br><span class="line"></span><br><span class="line">		<span class="string">``</span><span class="string">`javascript</span></span><br><span class="line"><span class="string">		var arr = [1,2,3,4,5,6];</span></span><br><span class="line"><span class="string">		arr.sort(function (a,b)) &#123;</span></span><br><span class="line"><span class="string">			//如果返回值大于0，则从大到小排序</span></span><br><span class="line"><span class="string">			//如果返回值小于0，则从小到大排序</span></span><br><span class="line"><span class="string">			return a - b;</span></span><br><span class="line"><span class="string">		&#125;</span></span><br><span class="line"><span class="string">		console.log(arr);</span></span><br></pre></td></tr></table></figure>
-</code></pre></li>
-<li><p>给对象排序</p>
-   <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>];</span><br><span class="line">arr.sort(<span class="function"><span class="keyword">function</span> (<span class="params">a,b</span>)) </span>&#123;</span><br><span class="line">	<span class="comment">//如果返回值大于0，则从大到小排序</span></span><br><span class="line">	<span class="comment">//如果返回值小于0，则从小到大排序</span></span><br><span class="line">	<span class="keyword">return</span> a - b;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(arr);</span><br></pre></td></tr></table></figure>
+<pre><code>```javascript
+</code></pre><p>   // 回调函数<br>   var callback = function(data){</p>
+<pre><code>   console.log(&quot;通知：&quot;+data);
+</code></pre><p>   }</p>
+<p>   //相当于文员<br>   function ajax(data){</p>
+<pre><code>   //1、创建XHR对象
+   var xhr = new XMLHttpRequest();
+   //2、发送前的准备工作
+   xhr.open(&#39;get&#39;,&#39;http://localhost/abc.php&#39;,true);
+   //3、执行发送动作
+   xhr.send(null);
+   //4、指定回调函数
+   xhr.onreadystatechange = function(){
+       //4表示服务器端已经完全返回结果，但是数据是否正确还不确定
+       if(xhr.readyState === 4){
+           //200表示服务器返回的数据是正确的
+           //404表示没有找到请求的资源
+           //500服务器端错误
+           if(xhr.status === 200){
+               // var result = &#39;空调坏了&#39;;
+               // var result = &#39;服务器挂了&#39;;
+               var result = xhr.responseText;
+               data(result);
+           }
+       }
+   }
+</code></pre><p>   }<br>   ajax(callback);      </p>
 </li>
 </ul>
 </li>
-<li><p><strong><em>函数的理解</em></strong></p>
+</ol>
+<ol>
+<li><p><strong><em>数组的排序</em></strong></p>
+<ul>
+<li><p>给数组排序</p>
+<pre><code class="javascript">   var arr = [1,2,3,4,5,6];
+   arr.sort(function (a,b)) {
+       //如果返回值大于0，则从大到小排序
+       //如果返回值小于0，则从小到大排序
+       return a - b;
+   }
+   console.log(arr);
+</code></pre>
 </li>
+<li><p>给对象排序</p>
+<pre><code class="javascript">   var arr = [1,2,3,4,5,6];
+   arr.sort(function (a,b)) {
+       //如果返回值大于0，则从大到小排序
+       //如果返回值小于0，则从小到大排序
+       return a - b;
+   }
+   console.log(arr);
+</code></pre>
+</li>
+</ul>
+</li>
+<li><strong><em>函数的理解</em></strong></li>
 <li><strong><em>简单理解，对象就是键值对的集合</em></strong> </li>
 </ol>
 <h2 id="section4"><a href="#section4" class="headerlink" title="section4"></a>section4</h2><hr>
@@ -710,7 +825,17 @@
 <li>对象</li>
 <li>构造函数</li>
 <li><p>函数是什么角色取决于它的调用方式</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>)</span>&#123;&#125;;</span><br><span class="line"></span><br><span class="line">foo(); <span class="comment">//作为普通函数，此时比较关心__proto__属性</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> f = <span class="keyword">new</span> foo(); <span class="comment">//作为构造函数，此时比较关心prototype属性</span></span><br><span class="line"></span><br><span class="line">foo.info = <span class="string">"hello"</span>  <span class="comment">//此时就是对象</span></span><br><span class="line">foo.showInfo = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">		<span class="built_in">console</span>.log(<span class="keyword">this</span>.info);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="javascript">function foo(){};
+
+foo(); //作为普通函数，此时比较关心__proto__属性
+
+var f = new foo(); //作为构造函数，此时比较关心prototype属性
+
+foo.info = &quot;hello&quot;  //此时就是对象
+foo.showInfo = function() {
+        console.log(this.info);
+}
+</code></pre>
 </li>
 </ol>
 <h2 id="section6"><a href="#section6" class="headerlink" title="section6"></a>section6</h2><p>###jsonp跨域</p>
@@ -719,14 +844,19 @@
 <li>ajax不予许跨域获取数据所以需要想办法解决跨域获取数据的问题。</li>
 <li>解决方案：flash、applet、name、h5等，现在主流的解决方案是jsonp。</li>
 <li><p>jsonp的本质：动态创建script标签，通过script标签的src属性发送请求，请求返回的内容是一段JavaScript代码（函数调用，一个变量）</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//本质是动态创建script标签，通过script标签的src属性发送请求</span></span><br><span class="line"><span class="keyword">var</span> script = <span class="built_in">document</span>.createElement(<span class="string">'script'</span>);</span><br><span class="line">script.src = <span class="string">'要请求文件的路径'</span>;</span><br><span class="line"><span class="keyword">var</span> head = <span class="built_in">document</span>.getElementTagName(<span class="string">'head'</span>)[<span class="number">0</span>];</span><br><span class="line">head.appenChild(script);</span><br></pre></td></tr></table></figure>
+<pre><code class="javascript">//本质是动态创建script标签，通过script标签的src属性发送请求
+var script = document.createElement(&#39;script&#39;);
+script.src = &#39;要请求文件的路径&#39;;
+var head = document.getElementTagName(&#39;head&#39;)[0];
+head.appenChild(script);
+</code></pre>
 </li>
-<li><p>动态创建的script加载数据的方式是异步的。</p>
-</li>
+<li>动态创建的script加载数据的方式是异步的。</li>
 </ol>
 <h4 id="jQuery中的jsonp"><a href="#jQuery中的jsonp" class="headerlink" title="jQuery中的jsonp"></a>jQuery中的jsonp</h4><ol>
 <li><p>jsonp和jsonpCallback分别是用来重命名</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">此处有代码 <span class="comment">// jsonp-test</span></span><br></pre></td></tr></table></figure>
+<pre><code class="javascript">此处有代码 // jsonp-test
+</code></pre>
 </li>
 </ol>
 <h4 id="url的标准格式"><a href="#url的标准格式" class="headerlink" title="url的标准格式"></a>url的标准格式</h4><ol>
@@ -751,26 +881,107 @@
 </ul>
 </li>
 </ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Animal</span>(<span class="params">name</span>) </span>&#123;</span><br><span class="line">      <span class="keyword">this</span>.name = name;</span><br><span class="line">      <span class="keyword">this</span>.lover = [<span class="string">'meat'</span>,<span class="string">'cake'</span>,<span class="string">'cheese'</span>,<span class="string">'juice'</span>];</span><br><span class="line">  &#125;</span><br><span class="line">  Animal.prototype.showName = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="keyword">this</span>.name);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">Tom</span>(<span class="params">color</span>) </span>&#123;</span><br><span class="line">      <span class="keyword">this</span>.color = color;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">/*将Tom的原型对象指向Animal的实例对象*/</span></span><br><span class="line">  Tom.prototype = <span class="keyword">new</span> Animal(<span class="string">'Tom'</span>);</span><br><span class="line">  Tom.prototype.catchMouse = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="keyword">this</span>.name +<span class="string">"抓到Jerry了!!"</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">var</span> tom = <span class="keyword">new</span> Tom(<span class="string">"grey"</span>);</span><br><span class="line">  tom.catchMouse();</span><br><span class="line">  tom.lover.push(<span class="string">'peal'</span>);</span><br><span class="line">  <span class="built_in">console</span>.log(tom.lover);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">var</span> jerry = <span class="keyword">new</span> Tom(<span class="string">'green'</span>);</span><br><span class="line">  <span class="built_in">console</span>.log(jerry.color);</span><br><span class="line">  jerry.catchMouse();</span><br><span class="line">  <span class="comment">/*继承的构造函数的引用类型对于所有的实例来说是共享的*/</span></span><br><span class="line">  <span class="built_in">console</span>.log(jerry.lover);</span><br></pre></td></tr></table></figure>
+<pre><code class="javascript">function Animal(name) {
+     this.name = name;
+     this.lover = [&#39;meat&#39;,&#39;cake&#39;,&#39;cheese&#39;,&#39;juice&#39;];
+ }
+ Animal.prototype.showName = function () {
+     console.log(this.name);
+ }
+ function Tom(color) {
+     this.color = color;
+ }
+ /*将Tom的原型对象指向Animal的实例对象*/
+ Tom.prototype = new Animal(&#39;Tom&#39;);
+ Tom.prototype.catchMouse = function () {
+     console.log(this.name +&quot;抓到Jerry了!!&quot;);
+ }
+ var tom = new Tom(&quot;grey&quot;);
+ tom.catchMouse();
+ tom.lover.push(&#39;peal&#39;);
+ console.log(tom.lover);
+
+ var jerry = new Tom(&#39;green&#39;);
+ console.log(jerry.color);
+ jerry.catchMouse();
+ /*继承的构造函数的引用类型对于所有的实例来说是共享的*/
+ console.log(jerry.lover);
+</code></pre>
 </li>
-</ol>
-<ol>
 <li><p>借用构造函数继承</p>
 <ul>
 <li>缺点：只能继承构造函数中的成员,不能继承构造函数中的方法</li>
 </ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Animal</span>(<span class="params">name</span>)</span>&#123;</span><br><span class="line">         <span class="keyword">this</span>.name = name;</span><br><span class="line">         <span class="comment">// this.showName = function()&#123;</span></span><br><span class="line">         <span class="comment">//     console.log(this.name);</span></span><br><span class="line">         <span class="comment">// &#125;</span></span><br><span class="line">     &#125;</span><br><span class="line">     <span class="comment">// Animal.prototype.showName = function()&#123;</span></span><br><span class="line">     <span class="comment">//     console.log(this.name);</span></span><br><span class="line">     <span class="comment">// &#125;</span></span><br><span class="line">     <span class="function"><span class="keyword">function</span> <span class="title">Mouse</span>(<span class="params">nickname,name</span>)</span>&#123;</span><br><span class="line">         <span class="comment">//这样调用的话Animal中的this是谁？Mouse的实例对象</span></span><br><span class="line">         Animal.call(<span class="keyword">this</span>,name);</span><br><span class="line">         <span class="comment">// thia.name = '老鼠';</span></span><br><span class="line">         <span class="keyword">this</span>.nickname = nickname;</span><br><span class="line">     &#125;</span><br><span class="line"></span><br><span class="line">     <span class="keyword">var</span> m = <span class="keyword">new</span> Mouse(<span class="string">'杰瑞'</span>,<span class="string">'老鼠'</span>);</span><br><span class="line">     <span class="comment">// console.dir(m);</span></span><br><span class="line">     <span class="comment">// m.showName();</span></span><br><span class="line">     <span class="built_in">console</span>.log(m.name);</span><br><span class="line">     <span class="built_in">console</span>.log(m.nickname);</span><br><span class="line"></span><br><span class="line">     <span class="keyword">var</span> m1 = <span class="keyword">new</span> Mouse(<span class="string">'贝塔舒克'</span>,<span class="string">'mouse'</span>);</span><br><span class="line">     <span class="built_in">console</span>.log(m1.name);</span><br><span class="line">     <span class="built_in">console</span>.log(m1.nickname);</span><br></pre></td></tr></table></figure>
+<pre><code class="javascript">function Animal(name){
+         this.name = name;
+         // this.showName = function(){
+         //     console.log(this.name);
+         // }
+     }
+     // Animal.prototype.showName = function(){
+     //     console.log(this.name);
+     // }
+     function Mouse(nickname,name){
+         //这样调用的话Animal中的this是谁？Mouse的实例对象
+         Animal.call(this,name);
+         // thia.name = &#39;老鼠&#39;;
+         this.nickname = nickname;
+     }
+
+     var m = new Mouse(&#39;杰瑞&#39;,&#39;老鼠&#39;);
+     // console.dir(m);
+     // m.showName();
+     console.log(m.name);
+     console.log(m.nickname);
+
+     var m1 = new Mouse(&#39;贝塔舒克&#39;,&#39;mouse&#39;);
+     console.log(m1.name);
+     console.log(m1.nickname);
+</code></pre>
 </li>
-</ol>
-<ol>
-<li>组合继承（原型继承和借用构造函数继承）</li>
+<li><p>组合继承（原型继承和借用构造函数继承）</p>
+</li>
 </ol>
 <ul>
 <li><p>目的:属性都使用实例的，方法都使用构造函数的。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name,sex</span>) </span>&#123;</span><br><span class="line">       <span class="keyword">this</span>.name = name;</span><br><span class="line">       <span class="keyword">this</span>.sex = sex</span><br><span class="line">       <span class="keyword">this</span>.score = [<span class="number">100</span>, <span class="number">200</span>, <span class="number">150</span>, <span class="number">180</span>, <span class="number">200</span>];</span><br><span class="line">   &#125;</span><br><span class="line">   Person.prototype.showName = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">       <span class="built_in">console</span>.log(<span class="keyword">this</span>.name);</span><br><span class="line">   &#125;</span><br><span class="line">   Person.prototype.showScore = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">       <span class="built_in">console</span>.log(<span class="keyword">this</span>.score);</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="function"><span class="keyword">function</span> <span class="title">Student</span>(<span class="params">name,age,sex</span>) </span>&#123;</span><br><span class="line">       <span class="comment">/*将构造函数Person的this指向构造函数Student的实例对象</span></span><br><span class="line"><span class="comment">       * 这样Student的实例对象就可以使用Person的属性</span></span><br><span class="line"><span class="comment">       * */</span></span><br><span class="line">       Person.call(<span class="keyword">this</span>,name,sex);</span><br><span class="line">       <span class="keyword">this</span>.age = age;</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="comment">/*将构造函数Student的原型对象指向构造函数Person的实例对象</span></span><br><span class="line"><span class="comment">   * 这样Student的实例对象就可以使用Person的原型对象的方法.</span></span><br><span class="line"><span class="comment">   * */</span></span><br><span class="line">   Student.prototype = <span class="keyword">new</span> Person();</span><br><span class="line"></span><br><span class="line">   Student.prototype.showAge = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">       <span class="built_in">console</span>.log(<span class="keyword">this</span>.name+<span class="string">"的年龄为"</span>+<span class="keyword">this</span>.age);</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="keyword">var</span> stu = <span class="keyword">new</span> Student(<span class="string">"张三"</span>,<span class="string">"12"</span>,<span class="string">"男"</span>);</span><br><span class="line">   <span class="built_in">console</span>.log(stu.name);</span><br><span class="line">   <span class="built_in">console</span>.log(stu.age);</span><br><span class="line">   <span class="built_in">console</span>.log(stu.sex);</span><br><span class="line">   <span class="built_in">console</span>.log(stu.score);</span><br><span class="line">   stu.showAge();</span><br><span class="line">   stu.showScore();</span><br></pre></td></tr></table></figure>
+<pre><code class="javascript">function Person(name,sex) {
+      this.name = name;
+      this.sex = sex
+      this.score = [100, 200, 150, 180, 200];
+  }
+  Person.prototype.showName = function () {
+      console.log(this.name);
+  }
+  Person.prototype.showScore = function () {
+      console.log(this.score);
+  }
+  function Student(name,age,sex) {
+      /*将构造函数Person的this指向构造函数Student的实例对象
+      * 这样Student的实例对象就可以使用Person的属性
+      * */
+      Person.call(this,name,sex);
+      this.age = age;
+  }
+  /*将构造函数Student的原型对象指向构造函数Person的实例对象
+  * 这样Student的实例对象就可以使用Person的原型对象的方法.
+  * */
+  Student.prototype = new Person();
+
+  Student.prototype.showAge = function () {
+      console.log(this.name+&quot;的年龄为&quot;+this.age);
+  }
+  var stu = new Student(&quot;张三&quot;,&quot;12&quot;,&quot;男&quot;);
+  console.log(stu.name);
+  console.log(stu.age);
+  console.log(stu.sex);
+  console.log(stu.score);
+  stu.showAge();
+  stu.showScore();
+</code></pre>
 </li>
 </ul>
-<h3 id="命名空间"><a href="#命名空间" class="headerlink" title="命名空间"></a>命名空间</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> nihao</span><br></pre></td></tr></table></figure>
+<h3 id="命名空间"><a href="#命名空间" class="headerlink" title="命名空间"></a>命名空间</h3><pre><code class="javascript">var nihao
+</code></pre>
 <h3 id="面向对象三大特性"><a href="#面向对象三大特性" class="headerlink" title="面向对象三大特性"></a>面向对象三大特性</h3><h4 id="封装"><a href="#封装" class="headerlink" title="封装"></a>封装</h4><h4 id="继承（代码的重用）"><a href="#继承（代码的重用）" class="headerlink" title="继承（代码的重用）"></a>继承（代码的重用）</h4><h4 id="多态-对于同一种行为的不同表现状态"><a href="#多态-对于同一种行为的不同表现状态" class="headerlink" title="多态: 对于同一种行为的不同表现状态"></a>多态: 对于同一种行为的不同表现状态</h4><h4 id="object-create"><a href="#object-create" class="headerlink" title="object.create();"></a>object.create();</h4><h2 id="section7"><a href="#section7" class="headerlink" title="section7"></a>section7</h2><h3 id="面向对象知识点"><a href="#面向对象知识点" class="headerlink" title="面向对象知识点"></a>面向对象知识点</h3><ul>
 <li>对象</li>
 <li>构造函数</li>
@@ -794,7 +1005,14 @@
 <li>一系列的方法，这些方法是可以相互调用的</li>
 <li>这些方法也可以不相互调用，通过实例对象直接调用（相互独立的功能）</li>
 </ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Foo</span>(<span class="params"></span>)</span>&#123;&#125;;</span><br><span class="line">Foo.prototype = &#123;</span><br><span class="line">		<span class="keyword">constructor</span>: Foo,</span><br><span class="line">		init: function()&#123;&#125;,</span><br><span class="line">		autoplay: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;,</span><br><span class="line">		......</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="javascript">function Foo(){};
+Foo.prototype = {
+       constructor: Foo,
+       init: function(){},
+       autoplay: function(){},
+       ......
+}
+</code></pre>
 </li>
 <li><p>避免命名冲突的终极解决方案：模块化。</p>
 </li>
@@ -812,10 +1030,25 @@
 <li>通过var声明的变量是不可以被delete方法删除的，如果不适用var声明的变量是可以被delete删除的</li>
 <li>全局作用域中的成员对所有的函数都是可见的</li>
 <li><p>delete删除数组元素的时候，数组的长度是不变的，即会删掉那个元素，但该元素仍然有一个占位符在。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">1</span>;</span><br><span class="line">b = <span class="number">2</span>;</span><br><span class="line"><span class="keyword">this</span>.c = <span class="number">123</span>;</span><br><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>];</span><br><span class="line"></span><br><span class="line"><span class="keyword">delete</span>: a;</span><br><span class="line"><span class="keyword">delete</span>: b;</span><br><span class="line"><span class="keyword">delete</span>: <span class="keyword">this</span>.c;</span><br><span class="line"><span class="keyword">delete</span>: arr[<span class="number">2</span>];</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"a"</span> <span class="keyword">in</span> <span class="built_in">window</span>); <span class="comment">//true</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"b"</span> <span class="keyword">in</span> <span class="built_in">window</span>); <span class="comment">//false</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"c"</span> <span class="keyword">in</span> <span class="built_in">window</span>); <span class="comment">//true</span></span><br><span class="line"><span class="built_in">console</span>.log(arr);</span><br></pre></td></tr></table></figure>
+<pre><code class="javascript">var a = 1;
+b = 2;
+this.c = 123;
+var arr = [1, 2, 3, 4, 5];
+
+delete: a;
+delete: b;
+delete: this.c;
+delete: arr[2];
+
+console.log(&quot;a&quot; in window); //true
+console.log(&quot;b&quot; in window); //false
+console.log(&quot;c&quot; in window); //true
+console.log(arr);
+</code></pre>
 </li>
 <li><p>in:判断某个属性是否在某个作用域中</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">"abc"</span> <span class="keyword">in</span> <span class="built_in">window</span>); <span class="comment">//true or false</span></span><br></pre></td></tr></table></figure>
+<pre><code class="javascript">console.log(&quot;abc&quot; in window); //true or false
+</code></pre>
 </li>
 </ul>
 <h4 id="函数作用域"><a href="#函数作用域" class="headerlink" title="函数作用域"></a>函数作用域</h4><ul>
@@ -831,7 +1064,10 @@
 <li>Javascript中的数据类型是可变的。</li>
 <li>函数作用域：所有的局部变量和内部的函数声明以及形参都提前了。</li>
 <li><p>变量提前仅仅是变量名提前，但是赋值没有提前。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">456</span> <span class="comment">//等价于</span></span><br><span class="line"><span class="keyword">var</span> a;</span><br><span class="line">a = <span class="number">456</span>;</span><br></pre></td></tr></table></figure>
+<pre><code class="javascript">var a = 456 //等价于
+var a;
+a = 456;
+</code></pre>
 </li>
 </ul>
 <h4 id="2-执行"><a href="#2-执行" class="headerlink" title="2.执行"></a>2.执行</h4><ul>
@@ -839,7 +1075,17 @@
 </ul>
 <h3 id="作用域链：作用域之间形成的链（嵌套函数）"><a href="#作用域链：作用域之间形成的链（嵌套函数）" class="headerlink" title="作用域链：作用域之间形成的链（嵌套函数）"></a>作用域链：作用域之间形成的链（嵌套函数）</h3><ul>
 <li><p>访问变量的规则是从里到外,不可以反过来</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">10</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">	<span class="keyword">var</span> b = <span class="number">20</span>;</span><br><span class="line">	<span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">		<span class="keyword">var</span> c = <span class="number">30</span>;</span><br><span class="line">		<span class="built_in">console</span>.log(a + b + c); <span class="comment">//60</span></span><br><span class="line">	&#125;</span><br><span class="line">	fn();</span><br><span class="line">&#125;</span><br><span class="line">foo();</span><br></pre></td></tr></table></figure>
+<pre><code class="javascript">var a = 10;
+function foo() {
+   var b = 20;
+   function fn() {
+       var c = 30;
+       console.log(a + b + c); //60
+   }
+   fn();
+}
+foo();
+</code></pre>
 </li>
 </ul>
 <h3 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h3><ul>
@@ -859,12 +1105,22 @@
 <ul>
 <li>闭包可以形成一个封闭的环境，然后对外开放一个接口</li>
 <li><p>闭包用来访问函数内部的数据</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params">rate</span>) </span>&#123;</span><br><span class="line">              <span class="keyword">var</span> money = <span class="number">100000</span>;</span><br><span class="line">              <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">                  <span class="keyword">return</span>  money * rate;</span><br><span class="line">              &#125;</span><br><span class="line">          &#125;</span><br><span class="line">          <span class="keyword">var</span> fn = foo(<span class="number">0.001</span>);</span><br><span class="line">          <span class="keyword">var</span> ret = fn();</span><br><span class="line">          <span class="built_in">console</span>.log(ret);</span><br></pre></td></tr></table></figure>
+<pre><code class="javascript">function foo(rate) {
+          var money = 100000;
+          return function () {
+              return  money * rate;
+          }
+      }
+      var fn = foo(0.001);
+      var ret = fn();
+      console.log(ret);
+</code></pre>
 </li>
 </ul>
 </li>
 </ul>
-<h4 id="自执行函数"><a href="#自执行函数" class="headerlink" title="自执行函数"></a>自执行函数</h4> <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"> </span><br></pre></td></tr></table></figure>
+<h4 id="自执行函数"><a href="#自执行函数" class="headerlink" title="自执行函数"></a>自执行函数</h4><pre><code class="javascript">
+</code></pre>
 <h3 id="打印函数时各参数的意思"><a href="#打印函数时各参数的意思" class="headerlink" title="打印函数时各参数的意思"></a>打印函数时各参数的意思</h3><ul>
 <li>length：形参的个数</li>
 <li><p>arguments：实参的个数,它不是数组，叫类数组或者关联数组</p>
@@ -878,7 +1134,11 @@
 <h2 id="section8"><a href="#section8" class="headerlink" title="section8"></a>section8</h2><h3 id="闭包补充"><a href="#闭包补充" class="headerlink" title="闭包补充"></a>闭包补充</h3><ul>
 <li>垃圾回收机制如果一个数据不存在任何引用，那么这个数据就成了垃圾</li>
 <li><p>C/C++的垃圾回收机制是手动的，（程序员自己分配内存，释放内存）</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;<span class="attr">name</span>: <span class="number">123</span>&#125;</span><br><span class="line">obj = <span class="literal">null</span>;</span><br><span class="line"><span class="built_in">console</span>.log(obj.name) <span class="comment">// undefined</span></span><br><span class="line"><span class="comment">//name就成了垃圾，等待被回收</span></span><br></pre></td></tr></table></figure>
+<pre><code class="javascript">var obj = {name: 123}
+obj = null;
+console.log(obj.name) // undefined
+//name就成了垃圾，等待被回收
+</code></pre>
 </li>
 <li><p>闭包的应用场景：获取函数内部的变量，并且可以修改（通过修改返回来的那个函数）.</p>
 </li>
@@ -909,11 +1169,22 @@
 <h4 id="默认行为"><a href="#默认行为" class="headerlink" title="默认行为"></a>默认行为</h4><ul>
 <li>系统给标签默认自带的行为：a标签跳转，拖动文字和图片变半透明等行为。</li>
 <li><p>阻止默认行为：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">a.onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">		只能阻止默认行为，不能阻止冒泡，但是jQuery中可以同时阻止两者</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//另一种写法</span></span><br><span class="line">a.onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(e) &#123;</span><br><span class="line">		e.preventDefault();</span><br><span class="line">	&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="javascript">a.onclick = function() {
+       只能阻止默认行为，不能阻止冒泡，但是jQuery中可以同时阻止两者
+       return false;
+}
+//另一种写法
+a.onclick = function() {
+   if(e) {
+       e.preventDefault();
+   } else {
+
+   }
+}
+</code></pre>
 </li>
-</ul>
-<ul>
-<li>阻止 </li>
+<li><p>阻止 </p>
+</li>
 </ul>
 
         
@@ -1041,7 +1312,7 @@
             </a>
             <ul class="dropdown-menu">
             <li>
-                <a class="sidebar_archives-link" href="/archives/2021/03/">三月 2021<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/11/">十一月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/08/">八月 2017<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/07/">七月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/06/">六月 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/04/">四月 2017<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/03/">三月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/01/">一月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/12/">十二月 2016<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/08/">八月 2016<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/07/">七月 2016<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/06/">六月 2016<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/05/">五月 2016<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/04/">四月 2016<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/03/">三月 2016<span class="sidebar_archives-count">5</span></a>
+                <a class="sidebar_archives-link" href="/archives/2021/03/">三月 2021<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/11/">十一月 2017<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/08/">八月 2017<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/07/">七月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/06/">六月 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/04/">四月 2017<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/03/">三月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/01/">一月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/12/">十二月 2016<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/08/">八月 2016<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/07/">七月 2016<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/06/">六月 2016<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/05/">五月 2016<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/04/">四月 2016<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/03/">三月 2016<span class="sidebar_archives-count">5</span></a>
             </ul>
         </li>
         
@@ -1263,6 +1534,10 @@ It will not impact the appearance and can give developers a lot of support :)
 <!-- Import prettify js  -->
 
 
+    
+        <script>lsloader.load("hanabi","/js/hanabi-browser-bundle.js?Pki5+pzkluqu53g+ouMWpA==", true)</script>
+    
+
 
 <!-- Window Load -->
 <!-- add class for prettify -->
@@ -1273,6 +1548,22 @@ It will not impact the appearance and can give developers a lot of support :)
     });
 
     
+    
+        
+            HanabiBrowser.clearColors();
+        
+        
+            
+                
+                    HanabiBrowser.putColor('#006bc4');
+                
+                    HanabiBrowser.putColor('#1687e5');
+                
+                    HanabiBrowser.putColor('#57a9f2');
+                
+            
+        
+        HanabiBrowser.start('pre code',false);
     
 </script>
 

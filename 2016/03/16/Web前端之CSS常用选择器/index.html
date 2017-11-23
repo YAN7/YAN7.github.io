@@ -49,7 +49,7 @@
     <meta name="theme-color" content="#0097A7">
     <meta name="author" content="YAN7">
     <meta name="description" itemprop="description" content="生命在于折腾，终于把博客搭建好啦。给Hexo点赞。">
-    <meta name="keywords" content="null,前端,html,CSS">
+    <meta name="keywords" content="null,CSS,前端,html">
 
     <!-- Import lsloader -->
     <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(key){try{localStorage.removeItem(key)}catch(e){}};lsloader.setLS=function(key,val){try{localStorage.setItem(key,val)}catch(e){}};lsloader.getLS=function(key){var val="";try{val=localStorage.getItem(key)}catch(e){val=""}return val};versionString="/*"+(window.materialVersion||"unknownVersion")+"*/";lsloader.clean=function(){try{var keys=[];for(var i=0;i<localStorage.length;i++){keys.push(localStorage.key(i))}keys.forEach(function(key){var data=lsloader.getLS(key);if(window.oldVersion){var remove=window.oldVersion.reduce(function(p,c){return p||data.indexOf("/*"+c+"*/")!==-1},false);if(remove){lsloader.removeLS(key)}}})}catch(e){}};lsloader.clean();lsloader.load=function(jsname,jspath,cssonload,isJs){if(typeof cssonload==="boolean"){isJs=cssonload;cssonload=undefined}isJs=isJs||false;cssonload=cssonload||function(){};var code;code=this.getLS(jsname);if(code&&code.indexOf(versionString)===-1){this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload,isJs);return}if(code){var versionNumber=code.split(versionString)[0];if(versionNumber!=jspath){console.log("reload:"+jspath);this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload,isJs);return}code=code.split(versionString)[1];if(isJs){this.jsRunSequence.push({name:jsname,code:code});this.runjs(jspath,jsname,code)}else{document.getElementById(jsname).appendChild(document.createTextNode(code));cssonload()}}else{this.requestResource(jsname,jspath,cssonload,isJs)}};lsloader.requestResource=function(name,path,cssonload,isJs){var that=this;if(isJs){this.iojs(path,name,function(path,name,code){that.setLS(name,path+versionString+code);that.runjs(path,name,code)})}else{this.iocss(path,name,function(code){document.getElementById(name).appendChild(document.createTextNode(code));that.setLS(name,path+versionString+code)},cssonload)}};lsloader.iojs=function(path,jsname,callback){var that=this;that.jsRunSequence.push({name:jsname,code:""});try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(path,jsname,xhr.response);return}}that.jsfallback(path,jsname)}};xhr.send(null)}catch(e){that.jsfallback(path,jsname)}};lsloader.iocss=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.iofonts=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.runjs=function(path,name,code){if(!!name&&!!code){for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code=code}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var script=document.createElement("script");script.appendChild(document.createTextNode(this.jsRunSequence[0].code));script.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(script);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var that=this;var script=document.createElement("script");script.src=this.jsRunSequence[0].path;script.type="text/javascript";this.jsRunSequence[0].status="loading";script.onload=function(){that.jsRunSequence.shift();if(that.jsRunSequence.length>0){that.runjs()}};document.body.appendChild(script)}};lsloader.tagLoad=function(path,name){this.jsRunSequence.push({name:name,code:"",path:path,status:"failed"});this.runjs()};lsloader.jsfallback=function(path,name){if(!!this.jsnamemap[name]){return}else{this.jsnamemap[name]=name}for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code="";this.jsRunSequence[k].status="failed";this.jsRunSequence[k].path=path}}this.runjs()};lsloader.cssfallback=function(path,name,cssonload){if(!!this.cssnamemap[name]){return}else{this.cssnamemap[name]=1}var link=document.createElement("link");link.type="text/css";link.href=path;link.rel="stylesheet";link.onload=link.onerror=cssonload;var root=document.getElementsByTagName("script")[0];root.parentNode.insertBefore(link,root)};lsloader.runInlineScript=function(scriptId,codeId){var code=document.getElementById(codeId).innerText;this.jsRunSequence.push({name:scriptId,code:code});this.runjs()};lsloader.loadCombo=function(jslist){var updateList="";var requestingModules={};for(var k in jslist){var LS=this.getLS(jslist[k].name);if(!!LS){var version=LS.split(versionString)[0];var code=LS.split(versionString)[1]}else{var version=""}if(version==jslist[k].path){this.jsRunSequence.push({name:jslist[k].name,code:code,path:jslist[k].path})}else{this.jsRunSequence.push({name:jslist[k].name,code:null,path:jslist[k].path,status:"comboloading"});requestingModules[jslist[k].name]=true;updateList+=(updateList==""?"":";")+jslist[k].path}}var that=this;if(!!updateList){var xhr=new XMLHttpRequest;xhr.open("get",combo+updateList,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){that.runCombo(xhr.response,requestingModules);return}}else{for(var i in that.jsRunSequence){if(requestingModules[that.jsRunSequence[i].name]){that.jsRunSequence[i].status="failed"}}that.runjs()}}};xhr.send(null)}this.runjs()};lsloader.runCombo=function(comboCode,requestingModules){comboCode=comboCode.split("/*combojs*/");comboCode.shift();for(var k in this.jsRunSequence){if(!!requestingModules[this.jsRunSequence[k].name]&&!!comboCode[0]){this.jsRunSequence[k].status="comboJS";this.jsRunSequence[k].code=comboCode[0];this.setLS(this.jsRunSequence[k].name,this.jsRunSequence[k].path+versionString+comboCode[0]);comboCode.shift()}}this.runjs()}})();</script>
@@ -95,7 +95,7 @@
     <!-- Import CSS -->
     
         <style id="material_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_css","/css/material.min.css?Z7a72R1E4SxzBKR/WGctOA==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
-        <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","/css/style.min.css?MKetZV3cUTfDxvMffaOezg==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+        <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","/css/style.min.css?hFq70/8jqTnrumLJYV+O9g==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
 
         
 
@@ -234,7 +234,7 @@
     <meta property="og:title" content="Web前端之CSS常用选择器 | feYAN7">
     <meta property="og:image" content="http://yoursite.com/img/favicon.png" />
     <meta property="og:description" content="生命在于折腾，终于把博客搭建好啦。给Hexo点赞。">
-    <meta property="og:article:tag" content="前端"> <meta property="og:article:tag" content="html"> <meta property="og:article:tag" content="CSS"> 
+    <meta property="og:article:tag" content="CSS"> <meta property="og:article:tag" content="前端"> <meta property="og:article:tag" content="html"> 
 
     
         <meta property="article:published_time" content="Wed Mar 16 2016 23:07:43 GMT+0800" />
@@ -283,7 +283,7 @@
             "url": "/img/favicon.png"
         }
     },
-    "keywords": ",前端,html,CSSnull",
+    "keywords": ",CSS,前端,htmlnull",
     "description": "生命在于折腾，终于把博客搭建好啦。给Hexo点赞。",
 }
 </script>
@@ -502,31 +502,105 @@
 <h2 id="以下为正文"><a href="#以下为正文" class="headerlink" title="以下为正文"></a>以下为正文</h2></blockquote>
 <h3 id="给html书写CSS样式的四种方式"><a href="#给html书写CSS样式的四种方式" class="headerlink" title="给html书写CSS样式的四种方式:"></a>给html书写CSS样式的四种方式:</h3><ol>
 <li><p><strong><em>外嵌式</em></strong>：嵌入某一个文件的CSS样式，一般在存放html文件的文件上会放一个专门存放CSS样式的文件，以便嵌入</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;!<span class="selector-tag">--</span> 外嵌的<span class="selector-tag">CSS</span>样式 <span class="selector-tag">--</span>&gt;</span><br><span class="line">&lt;!<span class="selector-tag">--</span> <span class="selector-tag">rel</span>是<span class="selector-tag">relation</span>的意思，指关联到某一个网址的样式，<span class="selector-tag">href</span>是文件的意思，指关联到某个文件的<span class="selector-tag">css</span>样式 <span class="selector-tag">--</span>&gt;</span><br><span class="line">&lt;link rel="stylesheet" href="CSS/main.css"&gt;</span><br></pre></td></tr></table></figure>
+<pre><code class="css">&lt;!-- 外嵌的CSS样式 --&gt;
+&lt;!-- rel是relation的意思，指关联到某一个网址的样式，href是文件的意思，指关联到某个文件的css样式 --&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;CSS/main.css&quot;&gt;
+</code></pre>
 </li>
 <li><p><strong><em>内嵌式</em></strong>：直接在head标签内写CSS样式，以style标签包裹(推荐使用)</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 内嵌的CSS样式 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">a&#123;</span></span><br><span class="line"><span class="undefined">	color: red;</span></span><br><span class="line"><span class="undefined">&#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<pre><code class="html">&lt;!-- 内嵌的CSS样式 --&gt;
+&lt;style&gt;
+a{
+ color: red;
+}
+&lt;/style&gt;
+</code></pre>
 </li>
-</ol>
-<ol>
 <li><p><strong><em>行内的CSS样式</em></strong>：直接在要某一行内写入CSS样式以只修改该行的样式（不推荐使用）</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 行内的css样式 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"http://baidu.com/"</span>  <span class="attr">style</span>=<span class="string">"color:silver"</span>&gt;</span>北京<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"http://baidu.com/"</span>&gt;</span>上海<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"http://baidu.com/"</span>&gt;</span>广州<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"http://baidu.com/"</span>&gt;</span>深圳<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"http://baidu.com/"</span>&gt;</span>杭州<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<pre><code class="html">&lt;!-- 行内的css样式 --&gt;
+&lt;li&gt;&lt;a href=&quot;http://baidu.com/&quot;  style=&quot;color:silver&quot;&gt;北京&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://baidu.com/&quot;&gt;上海&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://baidu.com/&quot;&gt;广州&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://baidu.com/&quot;&gt;深圳&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://baidu.com/&quot;&gt;杭州&lt;/a&gt;&lt;/li&gt;
+</code></pre>
 </li>
-</ol>
-<ol>
 <li><p><strong><em>导入式</em></strong>：和外嵌式一样都是导入某一个文件夹的CSS样式，不过写法不同,并且@import必须写在多有CSS样式的前面（不推荐使用）</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;!<span class="selector-tag">--</span> 导入的<span class="selector-tag">CSS</span>样式 <span class="selector-tag">--</span>&gt;</span><br><span class="line">&lt;!<span class="selector-tag">--</span> @<span class="keyword">import</span>必须写在所有<span class="keyword">CSS</span>样式的前面，和<span class="keyword">iOS</span>的@<span class="keyword">import</span>有点像，不过这种样式不推荐使用  --&gt;</span><br><span class="line">@import url(CSS/main.css)</span><br></pre></td></tr></table></figure>
+<pre><code class="css"> &lt;!-- 导入的CSS样式 --&gt;
+ &lt;!-- @import必须写在所有CSS样式的前面，和iOS的@import有点像，不过这种样式不推荐使用  --&gt;
+ @import url(CSS/main.css)
+</code></pre>
 </li>
 </ol>
 <hr>
 <h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p>1.<strong><em>标签选择器</em></strong>：直接给某一类标签书写CSS样式：</p>
- <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="css">	<span class="selector-tag">p</span> &#123; <span class="attribute">color</span>: red; &#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">p</span>&gt;</span>我是段落1<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">p</span>&gt;</span>我是段落2<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">p</span>&gt;</span>我是段落3<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<pre><code class="html">&lt;style&gt;
+    p { color: red; }
+&lt;/style&gt;
+
+&lt;body&gt;
+    &lt;p&gt;我是段落1&lt;/p&gt;
+    &lt;p&gt;我是段落2&lt;/p&gt;
+    &lt;p&gt;我是段落3&lt;/p&gt;
+&lt;/body&gt;
+</code></pre>
 <p>2.<strong><em>通识选择器</em></strong>：给该页面的所有的标签书写CSS样式，用* 表示：</p>
- <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="css">  <span class="comment">/* *通配符选择器 *用来设置所有的标签 */</span></span></span><br><span class="line"><span class="css">  * &#123; <span class="attribute">color</span>: blue; &#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">h1</span>&gt;</span>CSS 语法案例<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span> <span class="attr">id</span>=<span class="string">"p1"</span>&gt;</span>你好，我是p1标签<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span> <span class="attr">id</span>=<span class="string">"p2"</span>&gt;</span>你好，我是p2标签<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span>哈哈哈<span class="tag">&lt;<span class="name">span</span>&gt;</span>哈哈哈<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<pre><code class="html">&lt;head&gt;
+&lt;style&gt;
+  /* *通配符选择器 *用来设置所有的标签 */
+  * { color: blue; }
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;CSS 语法案例&lt;/h1&gt;
+  &lt;p id=&quot;p1&quot;&gt;你好，我是p1标签&lt;/p&gt;
+  &lt;p id=&quot;p2&quot;&gt;你好，我是p2标签&lt;/p&gt;
+  &lt;div&gt;哈哈哈&lt;span&gt;哈哈哈&lt;/span&gt;&lt;/div&gt;
+&lt;/body&gt;
+</code></pre>
 <p>3.<strong><em>id选择器</em></strong>：用来设置该id所在的标签，用＃表示：</p>
- <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="css">  <span class="comment">/* #id选择器 #用来设置该id所在的标签 */</span></span></span><br><span class="line"><span class="css">  <span class="selector-id">#p1</span> &#123; <span class="attribute">font-size</span>: <span class="number">20px</span>; &#125;</span></span><br><span class="line"><span class="css">  <span class="selector-id">#p2</span> &#123; <span class="attribute">font-size</span>: <span class="number">10px</span>; &#125;  </span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span> <span class="attr">id</span>=<span class="string">"p1"</span>&gt;</span>你好，我是p1标签<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span> <span class="attr">id</span>=<span class="string">"p2"</span>&gt;</span>你好，我是p2标签<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<pre><code class="html">&lt;style&gt;
+  /* #id选择器 #用来设置该id所在的标签 */
+  #p1 { font-size: 20px; }
+  #p2 { font-size: 10px; }  
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;p id=&quot;p1&quot;&gt;你好，我是p1标签&lt;/p&gt;
+  &lt;p id=&quot;p2&quot;&gt;你好，我是p2标签&lt;/p&gt;
+&lt;/body&gt;
+</code></pre>
 <p>4.<strong><em>类选择器</em></strong>：用来设置某一个class类所在的所有标签，一个class内可以有多个属性，用.表示</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="css"><span class="comment">/* 类选择器 .选择器可用于class属性 */</span></span></span><br><span class="line"><span class="css"><span class="selector-class">.head</span> &#123; <span class="attribute">color</span>: yellow; &#125;</span></span><br><span class="line"><span class="css"><span class="selector-class">.p1</span> &#123; <span class="attribute">color</span>: red; &#125;</span></span><br><span class="line"><span class="css"><span class="selector-class">.p2</span> &#123; <span class="attribute">color</span>: blue; &#125;</span></span><br><span class="line"><span class="css"><span class="selector-class">.p3</span> &#123; <span class="attribute">color</span>: orange; &#125;</span></span><br><span class="line"><span class="css"><span class="selector-class">.l1</span> &#123; <span class="attribute">color</span>: purple ; &#125;</span></span><br><span class="line"><span class="css"><span class="selector-class">.f1</span> &#123; <span class="attribute">color</span>: purple; &#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 一个class属性可以有多个类 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h1</span> <span class="attr">class</span>=<span class="string">"head haha"</span>&gt;</span>中国世纪水泥<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">"p3"</span>&gt;</span>出厂水泥合格证<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">"p3"</span>&gt;</span>金羊牌注册商标<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">""</span> <span class="attr">class</span>=<span class="string">"f1"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">fieldset</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">legend</span> <span class="attr">class</span>=<span class="string">"l1"</span>&gt;</span>出厂水泥装车(船)卡<span class="tag">&lt;/<span class="name">legend</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">"p1"</span>&gt;</span>购货单位: <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">"p1"</span>&gt;</span>使用单位: <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">"p1"</span>&gt;</span>产品名称: <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">"p1"</span>&gt;</span>强度等级: <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">"p2"</span>&gt;</span>数        量: <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">"p2"</span>&gt;</span>出厂编号: <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">"p2"</span>&gt;</span>车        号: <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">"p2"</span>&gt;</span>发  证  人 : <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">fieldset</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<pre><code class="html">&lt;style&gt;
+/* 类选择器 .选择器可用于class属性 */
+.head { color: yellow; }
+.p1 { color: red; }
+.p2 { color: blue; }
+.p3 { color: orange; }
+.l1 { color: purple ; }
+.f1 { color: purple; }
+&lt;/style&gt;
+
+&lt;body&gt;
+&lt;!-- 一个class属性可以有多个类 --&gt;
+&lt;h1 class=&quot;head haha&quot;&gt;中国世纪水泥&lt;/h1&gt;
+&lt;p class=&quot;p3&quot;&gt;出厂水泥合格证&lt;/p&gt;
+&lt;p class=&quot;p3&quot;&gt;金羊牌注册商标&lt;/p&gt;
+&lt;form action=&quot;&quot; class=&quot;f1&quot;&gt;
+&lt;fieldset&gt;
+&lt;legend class=&quot;l1&quot;&gt;出厂水泥装车(船)卡&lt;/legend&gt;
+    &lt;p class=&quot;p1&quot;&gt;购货单位: &lt;input type=&quot;text&quot;&gt;&lt;/p&gt;
+    &lt;p class=&quot;p1&quot;&gt;使用单位: &lt;input type=&quot;text&quot;&gt;&lt;/p&gt;
+    &lt;p class=&quot;p1&quot;&gt;产品名称: &lt;input type=&quot;text&quot;&gt;&lt;/p&gt;
+    &lt;p class=&quot;p1&quot;&gt;强度等级: &lt;input type=&quot;text&quot;&gt;&lt;/p&gt;
+    &lt;p class=&quot;p2&quot;&gt;数        量: &lt;input type=&quot;text&quot;&gt;&lt;/p&gt;
+    &lt;p class=&quot;p2&quot;&gt;出厂编号: &lt;input type=&quot;text&quot;&gt;&lt;/p&gt;
+    &lt;p class=&quot;p2&quot;&gt;车        号: &lt;input type=&quot;text&quot;&gt;&lt;/p&gt;
+    &lt;p class=&quot;p2&quot;&gt;发  证  人 : &lt;input type=&quot;text&quot;&gt;&lt;/p&gt;
+&lt;/fieldset&gt;
+&lt;/form&gt;
+&lt;/body&gt;
+</code></pre>
 <p><img src="http://upload-images.jianshu.io/upload_images/1183639-2e0bcb6a97bb5136.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="***Effect Shows***"></p>
 <blockquote>
 <p>类选择器和id选择器的区别：</p>
@@ -535,7 +609,10 @@
 <li>一个class类属性内可以有多个值</li>
 </ul>
 </blockquote>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">h1</span> <span class="attr">class</span>=<span class="string">"head haha"</span>&gt;</span>中国世纪水泥<span class="tag">&lt;/<span class="name">h1</span>&gt;</span> </span><br><span class="line"><span class="comment">&lt;!--这个class类有两个值:head和haha--&gt;</span></span><br><span class="line"><span class="comment">&lt;!--.head &#123;&#125; 和 .haha&#123;&#125;都可以用来设置h1标签--&gt;</span></span><br></pre></td></tr></table></figure>
+<pre><code class="html">&lt;h1 class=&quot;head haha&quot;&gt;中国世纪水泥&lt;/h1&gt; 
+&lt;!--这个class类有两个值:head和haha--&gt;
+&lt;!--.head {} 和 .haha{}都可以用来设置h1标签--&gt;
+</code></pre>
 <ul>
 <li>id选择器能且仅能控制一个标签。因为每一个id值在一个页面中都是唯一的，就像人的身份证号码一样，绝对不会出现第二个相同的id。</li>
 <li>id选择器是很“宝贵”的资源，不要滥用，要慎用。</li>
@@ -546,16 +623,98 @@
 <ol>
 <li><strong><em>复合选择器</em></strong>：顾名思义，就是两个或两个以上选择器组合在一起，以便更精确的设置某一个或某一类标签，中间不用分割符号：</li>
 </ol>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 顾名思义 即两个或两个以上选择器组合在一起，以更精确的定位控制某一个标签  --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="css">	<span class="selector-tag">h1</span><span class="selector-class">.msg</span> &#123; <span class="attribute">color</span>: blue; &#125;</span></span><br><span class="line"><span class="css">	<span class="selector-tag">h1</span><span class="selector-id">#msg</span> &#123; <span class="attribute">color</span>: red; &#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">h1</span> <span class="attr">class</span>=<span class="string">"msg"</span>&gt;</span>招财进宝<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">h1</span> <span class="attr">id</span>=<span class="string">"msg"</span>&gt;</span>财源广进<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">p</span>&gt;</span>阖家幸福<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<pre><code class="html">&lt;!-- 顾名思义 即两个或两个以上选择器组合在一起，以更精确的定位控制某一个标签  --&gt;
+&lt;style&gt;
+    h1.msg { color: blue; }
+    h1#msg { color: red; }
+&lt;/style&gt;
+
+&lt;body&gt;
+    &lt;h1 class=&quot;msg&quot;&gt;招财进宝&lt;/h1&gt;
+    &lt;h1 id=&quot;msg&quot;&gt;财源广进&lt;/h1&gt;
+    &lt;p&gt;阖家幸福&lt;/p&gt;
+&lt;/body&gt;
+</code></pre>
 <p>2.<strong><em>后代选择器</em></strong>：不管嵌套几层，只要在父代选择器所在的标签包裹内，都可以被设置，父代选择器和后代选择器中间用空格分割</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="css">	<span class="comment">/* 后代和父代选择器之间一定要有空格 */</span></span></span><br><span class="line"><span class="css">	<span class="selector-class">.list</span> <span class="selector-tag">ul</span> &#123; <span class="attribute">color</span>: red; &#125;</span></span><br><span class="line"><span class="css">	<span class="selector-class">.list</span> <span class="selector-tag">ol</span> &#123; <span class="attribute">color</span>: blue; &#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"list"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">strong</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>北京<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>上海<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>广州<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>深圳<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">strong</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">ol</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>永和<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>洋里<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>龙田<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>罗浮<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ol</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<pre><code class="html">&lt;style&gt;
+    /* 后代和父代选择器之间一定要有空格 */
+    .list ul { color: red; }
+    .list ol { color: blue; }
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;div class=&quot;list&quot;&gt;
+&lt;strong&gt;
+&lt;ul&gt;
+    &lt;li&gt;北京&lt;/li&gt;
+    &lt;li&gt;上海&lt;/li&gt;
+    &lt;li&gt;广州&lt;/li&gt;
+    &lt;li&gt;深圳&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/strong&gt;
+&lt;ol&gt;
+    &lt;li&gt;永和&lt;/li&gt;
+    &lt;li&gt;洋里&lt;/li&gt;
+    &lt;li&gt;龙田&lt;/li&gt;
+    &lt;li&gt;罗浮&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;/body&gt;
+</code></pre>
 <p><img src="http://upload-images.jianshu.io/upload_images/1183639-27824866fdb60a58.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="***Effect Shows***"></p>
 <p>2.<strong><em>并集选择器</em></strong>：并集选择器可以同时使几个标签享受相同的样式，标签之间用逗号分割</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="css">    <span class="selector-tag">h1</span>, <span class="selector-tag">h2</span>, <span class="selector-tag">h3</span>, <span class="selector-tag">p</span> &#123;  <span class="attribute">color</span>: red;&#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h1</span>&gt;</span>我是标题1<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h2</span>&gt;</span>我是标题2<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h3</span>&gt;</span>我是标题3<span class="tag">&lt;/<span class="name">h3</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>我是段落1<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<pre><code class="html">&lt;style&gt;
+    h1, h2, h3, p {  color: red;}
+&lt;/style&gt;
+
+&lt;body&gt;
+    &lt;h1&gt;我是标题1&lt;/h1&gt;
+    &lt;h2&gt;我是标题2&lt;/h2&gt;
+    &lt;h3&gt;我是标题3&lt;/h3&gt;
+    &lt;p&gt;我是段落1&lt;/p&gt;
+&lt;/body&gt;
+</code></pre>
 <p>3.<strong><em>子代选择器</em></strong>：子代选择器只能控制离父代标签最近的那一代标签，不能控制更深层次嵌套的标签,用&gt;表示</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="css">	<span class="selector-tag">div</span> &gt; <span class="selector-tag">p</span> &#123; <span class="attribute">color</span>: red; &#125;</span></span><br><span class="line"><span class="css">	<span class="selector-tag">li</span> &gt; <span class="selector-tag">p</span> &#123; <span class="attribute">color</span>: blue; &#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">p</span>&gt;</span>我是子代标签1<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">p</span>&gt;</span>我是子代标签2<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">p</span>&gt;</span>我是子代标签3<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">p</span>&gt;</span>我是子代标签4<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"Gchild"</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">p</span>&gt;</span>我是重孙代标签1<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">li</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">p</span>&gt;</span>我是重孙代标签2<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">li</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">p</span>&gt;</span>我是重孙代标签3<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<pre><code class="html">&lt;style&gt;
+    div &gt; p { color: red; }
+    li &gt; p { color: blue; }
+&lt;/style&gt;
+
+&lt;body&gt;
+&lt;div&gt;
+    &lt;p&gt;我是子代标签1&lt;/p&gt;
+    &lt;p&gt;我是子代标签2&lt;/p&gt;
+    &lt;p&gt;我是子代标签3&lt;/p&gt;
+    &lt;p&gt;我是子代标签4&lt;/p&gt;
+    &lt;ul&gt;
+        &lt;li class=&quot;Gchild&quot;&gt;
+            &lt;p&gt;我是重孙代标签1&lt;/p&gt;
+        &lt;/li&gt;
+        &lt;li&gt;
+            &lt;p&gt;我是重孙代标签2&lt;/p&gt;
+        &lt;/li&gt;
+        &lt;li&gt;
+            &lt;p&gt;我是重孙代标签3&lt;/p&gt;
+        &lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;
+&lt;/body&gt;
+</code></pre>
 <p>4.给某一类标签中带有特定属性(id、class、name等)的某一个标签设置样式，用［］表示</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 属性选择器用中括号表示 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="css"><span class="selector-tag">h1</span><span class="selector-attr">[id]</span> &#123; <span class="attribute">color</span>: red; &#125;</span></span><br><span class="line"><span class="css"><span class="selector-tag">input</span><span class="selector-attr">[type="text"]</span> &#123; <span class="attribute">background-color</span>: <span class="number">#501</span>; &#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">h1</span> <span class="attr">id</span>=<span class="string">"fir_head"</span>&gt;</span>联盟承认快船和雷霆的比赛出现误判<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">h1</span>&gt;</span>杜兰特：有时候必须依靠单打解决问题<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"password"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<pre><code class="html">&lt;!-- 属性选择器用中括号表示 --&gt;
+&lt;style&gt;
+h1[id] { color: red; }
+input[type=&quot;text&quot;] { background-color: #501; }
+&lt;/style&gt;
+
+&lt;body&gt;
+    &lt;h1 id=&quot;fir_head&quot;&gt;联盟承认快船和雷霆的比赛出现误判&lt;/h1&gt;
+    &lt;h1&gt;杜兰特：有时候必须依靠单打解决问题&lt;/h1&gt;
+    &lt;input type=&quot;text&quot;&gt;
+    &lt;input type=&quot;password&quot;&gt;
+&lt;/body&gt;
+</code></pre>
+
         
     
 
@@ -681,7 +840,7 @@
             </a>
             <ul class="dropdown-menu">
             <li>
-                <a class="sidebar_archives-link" href="/archives/2021/03/">三月 2021<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/11/">十一月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/08/">八月 2017<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/07/">七月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/06/">六月 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/04/">四月 2017<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/03/">三月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/01/">一月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/12/">十二月 2016<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/08/">八月 2016<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/07/">七月 2016<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/06/">六月 2016<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/05/">五月 2016<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/04/">四月 2016<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/03/">三月 2016<span class="sidebar_archives-count">5</span></a>
+                <a class="sidebar_archives-link" href="/archives/2021/03/">三月 2021<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/11/">十一月 2017<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/08/">八月 2017<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/07/">七月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/06/">六月 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/04/">四月 2017<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/03/">三月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/01/">一月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/12/">十二月 2016<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/08/">八月 2016<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/07/">七月 2016<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/06/">六月 2016<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/05/">五月 2016<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/04/">四月 2016<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/03/">三月 2016<span class="sidebar_archives-count">5</span></a>
             </ul>
         </li>
         
@@ -903,6 +1062,10 @@ It will not impact the appearance and can give developers a lot of support :)
 <!-- Import prettify js  -->
 
 
+    
+        <script>lsloader.load("hanabi","/js/hanabi-browser-bundle.js?Pki5+pzkluqu53g+ouMWpA==", true)</script>
+    
+
 
 <!-- Window Load -->
 <!-- add class for prettify -->
@@ -913,6 +1076,22 @@ It will not impact the appearance and can give developers a lot of support :)
     });
 
     
+    
+        
+            HanabiBrowser.clearColors();
+        
+        
+            
+                
+                    HanabiBrowser.putColor('#006bc4');
+                
+                    HanabiBrowser.putColor('#1687e5');
+                
+                    HanabiBrowser.putColor('#57a9f2');
+                
+            
+        
+        HanabiBrowser.start('pre code',false);
     
 </script>
 

@@ -95,7 +95,7 @@
     <!-- Import CSS -->
     
         <style id="material_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_css","/css/material.min.css?Z7a72R1E4SxzBKR/WGctOA==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
-        <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","/css/style.min.css?MKetZV3cUTfDxvMffaOezg==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+        <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","/css/style.min.css?hFq70/8jqTnrumLJYV+O9g==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
 
         
 
@@ -495,8 +495,20 @@
     
         <p>记录一些常用的工具函数 </p>
 <a id="more"></a>
-<h1 id="记录常用的工具函数"><a href="#记录常用的工具函数" class="headerlink" title="记录常用的工具函数"></a>记录常用的工具函数</h1><h4 id="1-数据去重"><a href="#1-数据去重" class="headerlink" title="1. 数据去重"></a>1. 数据去重</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> dedupe = <span class="function">(<span class="params">array</span>)=&gt;</span> <span class="built_in">Array</span>.from(<span class="keyword">new</span> <span class="built_in">Set</span>(array));</span><br></pre></td></tr></table></figure>
-<h4 id="2-根据时间戳返回标准时间"><a href="#2-根据时间戳返回标准时间" class="headerlink" title="2.根据时间戳返回标准时间"></a>2.根据时间戳返回标准时间</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> addZero = <span class="function">(<span class="params">num</span>)=&gt;</span> num &gt;= <span class="number">10</span> ? num : <span class="string">`0<span class="subst">$&#123;num&#125;</span>`</span>;</span><br><span class="line"><span class="keyword">const</span> getFormatDate = <span class="function">(<span class="params">timeStamp, noHour</span>)=&gt;</span> &#123;</span><br><span class="line">	<span class="keyword">const</span> d = <span class="keyword">new</span> <span class="built_in">Date</span>(timeStamp);</span><br><span class="line">	<span class="keyword">const</span> year = d.getFullyear();</span><br><span class="line">	<span class="keyword">const</span> month = d.getMonth() + <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">const</span> date = d.getDate();</span><br><span class="line">	<span class="keyword">const</span> hour = addZero(d.getHours());</span><br><span class="line">	<span class="keyword">const</span> minute = addZero(d.getMinutes());</span><br><span class="line">	<span class="keyword">const</span> second = addZero(d.getSecond());</span><br><span class="line">	<span class="keyword">return</span> noHour ? <span class="string">`<span class="subst">$&#123;year&#125;</span>-<span class="subst">$&#123;month&#125;</span>-<span class="subst">$&#123;date&#125;</span>`</span> : <span class="string">`<span class="subst">$&#123;year&#125;</span>-<span class="subst">$&#123;month&#125;</span>-<span class="subst">$&#123;date&#125;</span> <span class="subst">$&#123;hour&#125;</span>:<span class="subst">$&#123;mintute&#125;</span>:<span class="subst">$&#123;second&#125;</span>`</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="记录常用的工具函数"><a href="#记录常用的工具函数" class="headerlink" title="记录常用的工具函数"></a>记录常用的工具函数</h1><h4 id="1-数据去重"><a href="#1-数据去重" class="headerlink" title="1. 数据去重"></a>1. 数据去重</h4><pre><code class="javascript">const dedupe = (array)=&gt; Array.from(new Set(array));
+</code></pre>
+<h4 id="2-根据时间戳返回标准时间"><a href="#2-根据时间戳返回标准时间" class="headerlink" title="2.根据时间戳返回标准时间"></a>2.根据时间戳返回标准时间</h4><pre><code class="javascript">const addZero = (num)=&gt; num &gt;= 10 ? num : `0${num}`;
+const getFormatDate = (timeStamp, noHour)=&gt; {
+    const d = new Date(timeStamp);
+    const year = d.getFullyear();
+    const month = d.getMonth() + 1;
+    const date = d.getDate();
+    const hour = addZero(d.getHours());
+    const minute = addZero(d.getMinutes());
+    const second = addZero(d.getSecond());
+    return noHour ? `${year}-${month}-${date}` : `${year}-${month}-${date} ${hour}:${mintute}:${second}`
+}
+</code></pre>
 
         
     
@@ -623,7 +635,7 @@
             </a>
             <ul class="dropdown-menu">
             <li>
-                <a class="sidebar_archives-link" href="/archives/2021/03/">三月 2021<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/11/">十一月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/08/">八月 2017<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/07/">七月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/06/">六月 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/04/">四月 2017<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/03/">三月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/01/">一月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/12/">十二月 2016<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/08/">八月 2016<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/07/">七月 2016<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/06/">六月 2016<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/05/">五月 2016<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/04/">四月 2016<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/03/">三月 2016<span class="sidebar_archives-count">5</span></a>
+                <a class="sidebar_archives-link" href="/archives/2021/03/">三月 2021<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/11/">十一月 2017<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/08/">八月 2017<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/07/">七月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/06/">六月 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/04/">四月 2017<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/03/">三月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/01/">一月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/12/">十二月 2016<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/08/">八月 2016<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/07/">七月 2016<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/06/">六月 2016<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/05/">五月 2016<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/04/">四月 2016<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/03/">三月 2016<span class="sidebar_archives-count">5</span></a>
             </ul>
         </li>
         
@@ -845,6 +857,10 @@ It will not impact the appearance and can give developers a lot of support :)
 <!-- Import prettify js  -->
 
 
+    
+        <script>lsloader.load("hanabi","/js/hanabi-browser-bundle.js?Pki5+pzkluqu53g+ouMWpA==", true)</script>
+    
+
 
 <!-- Window Load -->
 <!-- add class for prettify -->
@@ -855,6 +871,22 @@ It will not impact the appearance and can give developers a lot of support :)
     });
 
     
+    
+        
+            HanabiBrowser.clearColors();
+        
+        
+            
+                
+                    HanabiBrowser.putColor('#006bc4');
+                
+                    HanabiBrowser.putColor('#1687e5');
+                
+                    HanabiBrowser.putColor('#57a9f2');
+                
+            
+        
+        HanabiBrowser.start('pre code',false);
     
 </script>
 
